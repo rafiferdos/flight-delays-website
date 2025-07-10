@@ -1,0 +1,10 @@
+.wrapper {
+  background-image: url("../../../assets/images/home/hero/hero-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: calc(100dvh - 85px);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
