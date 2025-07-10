@@ -44,7 +44,7 @@ export default function Hero() {
               </span>
               <div className="flex gap-x-1">
                 {[...Array(4)].map((_, i) => (
-                  <div key={i} className="rounded bg-[#00b67a] p-1">
+                  <div key={i} className="bg-[#00b67a]">
                     <Icon
                       icon="material-symbols:star"
                       color="white"
@@ -53,7 +53,7 @@ export default function Hero() {
                     />
                   </div>
                 ))}
-                <div className="relative rounded bg-gray-300 p-1">
+                <div className="relative bg-gray-300">
                   <Icon
                     icon="material-symbols:star"
                     color="white"
@@ -61,10 +61,10 @@ export default function Hero() {
                     width={16}
                   />
                   <div
-                    className="absolute inset-0 rounded bg-[#00b67a]"
+                    className="absolute inset-0 bg-[#00b67a]"
                     style={{ clipPath: "inset(0 50% 0 0)" }}
                   >
-                    <div className="p-1">
+                    <div className="">
                       <Icon
                         icon="material-symbols:star"
                         color="white"
