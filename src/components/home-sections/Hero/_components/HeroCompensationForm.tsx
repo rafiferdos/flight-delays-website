@@ -111,7 +111,7 @@ export default function HeroCompensationForm() {
       <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
         {/* Departure Airport */}
         <div className="space-y-2">
-          <Label className="block text-sm font-medium text-white/90">
+          <Label className="block text-left text-sm font-medium text-white/90">
             Select Departure Airport
           </Label>
           <div className="flex h-12 items-center rounded-xl bg-white px-4 py-3 shadow-sm">
@@ -127,7 +127,7 @@ export default function HeroCompensationForm() {
                   variant="ghost"
                   role="combobox"
                   aria-expanded={departureOpen}
-                  className="w-full justify-between border-none bg-transparent p-0 text-sm font-medium text-gray-700 hover:bg-transparent focus:ring-0 focus:ring-offset-0"
+                  className="w-full justify-between border-none bg-transparent p-0 text-left text-sm font-medium text-gray-700 hover:bg-transparent focus:ring-0 focus:ring-offset-0"
                 >
                   {departureAirport
                     ? searchResults.find(
@@ -183,7 +183,7 @@ export default function HeroCompensationForm() {
 
         {/* Arrival Airport */}
         <div className="space-y-2">
-          <Label className="block text-sm font-medium text-white/90">
+          <Label className="block text-left text-sm font-medium text-white/90">
             Select Arrival Airport
           </Label>
           <div className="flex h-12 items-center rounded-xl bg-white px-4 py-3 shadow-sm">
@@ -199,7 +199,7 @@ export default function HeroCompensationForm() {
                   variant="ghost"
                   role="combobox"
                   aria-expanded={arrivalOpen}
-                  className="w-full justify-between border-none bg-transparent p-0 text-sm font-medium text-gray-700 hover:bg-transparent focus:ring-0 focus:ring-offset-0"
+                  className="w-full justify-between border-none bg-transparent p-0 text-left text-sm font-medium text-gray-700 hover:bg-transparent focus:ring-0 focus:ring-offset-0"
                 >
                   {arrivalAirport
                     ? searchResults.find(
