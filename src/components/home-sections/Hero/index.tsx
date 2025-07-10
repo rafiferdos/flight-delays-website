@@ -101,6 +101,10 @@ export default function Hero() {
           {/* ------------------ Form Section ---------------------- */}
           <div className="w-full max-w-4xl">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl">
+              {/* check compensation gradient text */}
+              <h3 className="mb-8 text-center text-4xl font-bold text-[#7fdaf2]">
+                Check Compensation
+              </h3>
               {/* Use Original Form Component for Functionality */}
               <CheckCompensationForm />
 

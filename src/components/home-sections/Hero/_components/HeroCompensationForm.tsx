@@ -108,7 +108,7 @@ export default function HeroCompensationForm() {
   return (
     <form onSubmit={(e) => e.preventDefault()} className="w-full">
       {/* Inputs and Button on Same Line */}
-      <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+      <div className="mb-4 grid grid-cols-1 gap-2 lg:grid-cols-3">
         {/* Departure Airport */}
         <div className="space-y-2">
           <Label className="block text-left text-sm font-medium text-white/90">
