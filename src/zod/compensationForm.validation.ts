@@ -15,12 +15,12 @@ export const compensationFormValidationSchema = z.object({
   airline: z
     .string({ required_error: "Please select airline" })
     .min(1, "Please select airline"),
-  bookingReferenceNumber: z
-    .string()
-    .min(1, { message: "Please enter your booking reference number." }),
   flightNumber: z
     .string({ required_error: "Please enter your flight number" })
     .min(1, "Please enter your flight number"),
+  claimType: z
+    .string({ required_error: "Please select claim type" })
+    .min(1, "Please select claim type"),
   leadPassengerFullName: z
     .string({ required_error: "Please enter passenger name" })
     .min(1, "Please enter passenger name"),

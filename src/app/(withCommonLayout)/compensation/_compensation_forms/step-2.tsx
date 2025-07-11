@@ -2,6 +2,7 @@
 
 import RequiredSign from "@/components/form-components/RequiredSign"
 import UInput from "@/components/form-components/UInput"
+import URadioGroup from "@/components/form-components/URadioGroup"
 import { AutoComplete, AutoCompleteOption } from "@/components/ui/autocomplete"
 import {
   FormControl,
@@ -207,10 +208,19 @@ export default function CompensationStep2() {
       )}
 
       {watch("flightNumber")?.length > 1 && (
-        <UInput
-          name="bookingReferenceNumber"
-          label="Your Booking Reference Number / PNR"
-          placeholder="Enter booking reference number"
+        <URadioGroup
+          name="claimType"
+          label="Reason for your compensation claim"
+          options={[
+            {
+              value: "delayed",
+              label: "Delayed for 3 hours or more"
+            },
+            {
+              value: "cancelled",
+              label: "Cancelled flight"
+            }
+          ]}
           required
         />
       )}
