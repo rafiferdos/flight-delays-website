@@ -112,7 +112,7 @@ export function MultiStepViewer({
           }}
           disabled={isSubmitting}
         >
-          {isLastStep ? "Submit" : "Next"}
+          {isLastStep ? "Submit Your Claim" : "Next"}
         </Button>
 
         {/* Submit Button */}

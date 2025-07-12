@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import UCheckbox from "@/components/form-components/UCheckbox"
 import UDatePicker from "@/components/form-components/UDatePicker"
 import UInput from "@/components/form-components/UInput"
 import UPhoneInput from "@/components/form-components/UPhoneInput"
@@ -129,22 +128,20 @@ export default function CompensationStep3() {
         </div>
       )}
 
-      <div className="mt-6 space-y-4">
-        {/* Professional Terms Text */}
-        <div className="rounded-lg bg-gray-50 p-4 text-sm text-gray-700">
-          <p className="mb-3 font-medium text-gray-900">
+      <div className="mt-6">
+        {/* Professional Terms Text - Italic and Smaller */}
+        <div className="rounded-lg bg-gray-50 p-4 text-xs text-gray-600 italic">
+          <p className="mb-2">
             By completing this form you consent to instruct Bolt and Co
-            Solicitors to present a claim
-          </p>
-          <p className="mb-3">
-            to the airline on behalf of the passengers listed above, which could
-            include issuing proceedings. You understand that they work on a
-            no-win-no-fee basis, which means if they aren't successful you won't
-            have to pay anything. When they do recover compensation from the
-            airline they will deduct their fees. You confirm your agreements to{" "}
+            Solicitors to present a claim to the airline on behalf of the
+            passengers listed above, which could include issuing proceedings.
+            You understand that they work on a no-win-no-fee basis, which means
+            if they aren't successful you won't have to pay anything. When they
+            do recover compensation from the airline they will deduct their
+            fees. You confirm your agreements to{" "}
             <Link
               href="/terms-conditions"
-              className="font-semibold text-blue-600 underline hover:text-blue-800"
+              className="font-medium text-blue-600 underline hover:text-blue-800"
             >
               these terms and conditions
             </Link>{" "}
@@ -152,17 +149,6 @@ export default function CompensationStep3() {
             will be sent to the airline in your name.
           </p>
         </div>
-
-        {/* Checkbox for Agreement */}
-        <UCheckbox
-          name="acceptTerms"
-          label={
-            <span className="text-sm font-medium">
-              I agree to the above terms and authorize Bolt and Co Solicitors to
-              act on my behalf
-            </span>
-          }
-        />
       </div>
     </div>
   )
