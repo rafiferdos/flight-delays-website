@@ -120,23 +120,32 @@ export default function CompensationStep3() {
                 </Label>
 
                 <div className="grid gap-3">
-                  <UInput
-                    name={`additionalPassengers[${index}].name`}
-                    placeholder="Enter full name"
-                    label="Full Name"
-                    required
-                  />
-
                   <UCheckbox
                     name={`additionalPassengers[${index}].isUnder18`}
                     label="Under 18?"
                   />
 
-                  {watch(`additionalPassengers[${index}].isUnder18`) && (
-                    <UDatePicker
-                      name={`additionalPassengers[${index}].dob`}
-                      placeholder="Select date of birth"
-                      label="Date of Birth"
+                  {/* Name and DOB Fields - Side by side when under 18 is checked */}
+                  {watch(`additionalPassengers[${index}].isUnder18`) ? (
+                    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                      <UInput
+                        name={`additionalPassengers[${index}].name`}
+                        placeholder="Enter full name"
+                        label="Full Name"
+                        required
+                      />
+                      <UDatePicker
+                        name={`additionalPassengers[${index}].dob`}
+                        placeholder="Select date of birth"
+                        label="Date of Birth"
+                        required
+                      />
+                    </div>
+                  ) : (
+                    <UInput
+                      name={`additionalPassengers[${index}].name`}
+                      placeholder="Enter full name"
+                      label="Full Name"
                       required
                     />
                   )}
