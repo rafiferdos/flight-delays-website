@@ -3,7 +3,7 @@ import { StatsData } from "@/constants/home.constants"
 
 export default function Stats() {
   return (
-    <ResponsiveContainer className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-3 2xl:grid-cols-4">
+    <ResponsiveContainer className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-2">
       {StatsData?.map((stat) => (
         <div
           key={stat.key}
@@ -18,7 +18,7 @@ export default function Stats() {
           className="text-center lg:text-left"
         >
           <span className="md:text-h4 text-h5 lg:text-h3 text-gradient text-center font-semibold">
-            {new Intl.NumberFormat().format(stat.stat)}
+            {stat.stat}
             {stat.valueText}
           </span>
 
