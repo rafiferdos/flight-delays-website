@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
+import UCheckbox from "@/components/form-components/UCheckbox"
 import UDatePicker from "@/components/form-components/UDatePicker"
 import UInput from "@/components/form-components/UInput"
 import UPhoneInput from "@/components/form-components/UPhoneInput"
@@ -10,6 +11,7 @@ import { Label } from "@/components/ui/label"
 // import { cn } from "@/lib/utils"
 import { Trash2 } from "lucide-react"
 import Link from "next/link"
+import { useEffect } from "react"
 import { useFormContext } from "react-hook-form"
 
 export default function CompensationStep3() {
@@ -18,8 +20,13 @@ export default function CompensationStep3() {
 
   const handleAddPassenger = () => {
     setValue("additionalPassengers", [
-      ...watch("additionalPassengers"),
-      { id: `passenger-${Date.now()}`, name: "" }
+      ...(watch("additionalPassengers") || []),
+      {
+        id: `passenger-${Date.now()}`,
+        name: "",
+        isUnder18: false,
+        dob: undefined
+      }
     ])
   }
 
@@ -32,6 +39,21 @@ export default function CompensationStep3() {
 
   const additionalPassengers = watch("additionalPassengers")
 
+  // Watch for changes in under18 checkboxes
+  useEffect(() => {
+    if (additionalPassengers) {
+      additionalPassengers.forEach((passenger: any, index: number) => {
+        const isUnder18 = watch(`additionalPassengers[${index}].isUnder18`)
+        if (isUnder18 !== passenger.isUnder18) {
+          // Clear DOB if switching from under18 to over18
+          if (!isUnder18 && passenger.dob) {
+            setValue(`additionalPassengers[${index}].dob`, undefined)
+          }
+        }
+      })
+    }
+  }, [additionalPassengers, setValue, watch])
+
   return (
     <div className="grid gap-6">
       <UInput
@@ -42,7 +64,7 @@ export default function CompensationStep3() {
         required
       />
 
-      <UDatePicker name="dateOfBirth" label="Select Date of Birth" />
+      <UDatePicker name="dateOfBirth" label="Select Date of Birth" required />
 
       <UInput
         type="email"
@@ -81,24 +103,43 @@ export default function CompensationStep3() {
         <div className="grid gap-4">
           {additionalPassengers?.map(
             (
-              passenger: { id: string; name: string; dob?: string },
+              passenger: {
+                id: string
+                name: string
+                isUnder18?: boolean
+                dob?: Date | string
+              },
               index: number
             ) => (
-              <div key={passenger.id} className="grid gap-2">
-                <Label className="mb-1.5 block">
+              <div
+                key={passenger.id}
+                className="grid gap-3 rounded-lg border border-gray-200 p-4"
+              >
+                <Label className="text-base font-semibold">
                   Additional Passenger {index + 1}
                 </Label>
 
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid gap-3">
                   <UInput
                     name={`additionalPassengers[${index}].name`}
                     placeholder="Enter full name"
+                    label="Full Name"
+                    required
                   />
-                  <UDatePicker
-                    name={`additionalPassengers[${index}].dob`}
-                    placeholder="Select date of birth"
-                    label=""
+
+                  <UCheckbox
+                    name={`additionalPassengers[${index}].isUnder18`}
+                    label="Under 18?"
                   />
+
+                  {watch(`additionalPassengers[${index}].isUnder18`) && (
+                    <UDatePicker
+                      name={`additionalPassengers[${index}].dob`}
+                      placeholder="Select date of birth"
+                      label="Date of Birth"
+                      required
+                    />
+                  )}
                 </div>
 
                 {index >= 3 && (
@@ -123,7 +164,7 @@ export default function CompensationStep3() {
             className="text-primary mt-2 cursor-pointer hover:underline"
             onClick={handleAddPassenger}
           >
-            Add More
+            Add More Passenger
           </button>
         </div>
       )}
