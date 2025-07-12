@@ -120,11 +120,6 @@ export default function CompensationStep3() {
                 </Label>
 
                 <div className="grid gap-3">
-                  <UCheckbox
-                    name={`additionalPassengers[${index}].isUnder18`}
-                    label="Under 18?"
-                  />
-
                   {/* Name and DOB Fields - Side by side when under 18 is checked */}
                   {watch(`additionalPassengers[${index}].isUnder18`) ? (
                     <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -149,6 +144,11 @@ export default function CompensationStep3() {
                       required
                     />
                   )}
+
+                  <UCheckbox
+                    name={`additionalPassengers[${index}].isUnder18`}
+                    label="Under 18?"
+                  />
                 </div>
 
                 {index >= 3 && (
