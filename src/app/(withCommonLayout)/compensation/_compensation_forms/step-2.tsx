@@ -144,11 +144,17 @@ export default function CompensationStep2() {
                 <AutoComplete
                   options={
                     airlineSearchResults?.length > 0
-                      ? airlineSearchResults?.map((result) => ({
-                          label: `${result?.airline_name} (${result?.iata_code || ""})`,
-                          value: result?.iata_code,
-                          searchText: result.airline_name
-                        }))
+                      ? airlineSearchResults
+                          .filter(
+                            (result) => result?.airline_name && result?.id
+                          ) // Filter out invalid results
+                          .map((result, index) => ({
+                            label: `${result?.airline_name} (${result?.iata_code || ""})`,
+                            value:
+                              result?.iata_code ||
+                              `airline-${result.id}-${index}`, // Use unique fallback
+                            searchText: result.airline_name
+                          }))
                       : []
                   }
                   emptyMessage="No results."
@@ -178,6 +184,14 @@ export default function CompensationStep2() {
                   onChange={(searchInput) => {
                     setAirlineSearchQuery(searchInput)
                   }}
+                  icon={
+                    <Icon
+                      icon={"mdi:airplane"}
+                      className="text-gray-400"
+                      height={20}
+                      width={20}
+                    />
+                  }
                   searchTooltipText="Search by airline name"
                 />
               </FormControl>
@@ -189,22 +203,33 @@ export default function CompensationStep2() {
       />
 
       {selectedAirline && (
-        <UInput
-          variant="primary"
-          name="flightNumber"
-          autoComplete="Flight number"
-          label="Flight Number"
-          placeholder="0030"
-          className={cn(selectedAirlineIataCode && "pl-16")}
-          prefixIcon={
-            selectedAirlineIataCode ? (
-              <div className="text-primary border-primary absolute top-1/2 left-2 -translate-y-1/2 rounded-md border px-3 py-1 text-sm font-bold uppercase">
+        <div className="space-y-2">
+          <FormLabel className="flex-center-start mb-0.5 gap-1">
+            Flight Number <RequiredSign />
+          </FormLabel>
+          <div className="flex items-stretch">
+            {/* IATA Code Prefix */}
+            {selectedAirlineIataCode && (
+              <div className="border-primary bg-primary/10 text-primary flex items-center justify-center rounded-l-md border border-r-0 px-3 py-2 text-sm font-bold uppercase">
                 {selectedAirlineIataCode}
               </div>
-            ) : null
-          }
-          required
-        />
+            )}
+
+            {/* Flight Number Input */}
+            <div className="flex-1">
+              <UInput
+                variant="primary"
+                name="flightNumber"
+                autoComplete="Flight number"
+                placeholder="0030"
+                className={cn(
+                  selectedAirlineIataCode && "rounded-l-none border-l-0"
+                )}
+                required
+              />
+            </div>
+          </div>
+        </div>
       )}
 
       {watch("flightNumber")?.length > 1 && (
