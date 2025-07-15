@@ -224,6 +224,15 @@ export default function CompensationStep3() {
             will be sent to the airline in your name.
           </p>
         </div>
+
+        {/* Accept Terms Checkbox */}
+        <div className="mt-4">
+          <UCheckbox
+            name="acceptTerms"
+            label="I accept the terms and conditions stated above"
+            required
+          />
+        </div>
       </div>
     </div>
   )
