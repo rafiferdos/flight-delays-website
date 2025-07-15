@@ -220,7 +220,7 @@ export default function CompensationStep3() {
             >
               terms and conditions
             </Link>{" "}
-            and you also, agree to digitally sign this
+            and you also, agree to digitally sign this {" "}
             <Link
               href="/terms-conditions"
               className="font-medium text-blue-600 underline hover:text-blue-800"
