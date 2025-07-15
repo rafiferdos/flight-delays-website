@@ -58,7 +58,7 @@ export default function CompensationForm({
     {
       step: 2,
       formElement: <CompensationStep2 key="Step-2" />,
-      fields: ["airline", "flightNumber", "bookingReferenceNumber"]
+      fields: ["airline", "flightNumber", "claimType", "additionalComments"]
     },
     {
       step: 3,
@@ -69,7 +69,7 @@ export default function CompensationForm({
         "email",
         "contact",
         "additionalPassenger",
-        "additionalPassenger1",
+        "additionalPassengers",
         "acceptTerms"
       ]
     }
@@ -196,7 +196,20 @@ export default function CompensationForm({
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">Flight Number</td>
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">${data.flightNumber}</td>
                           </tr>
-
+                          <tr>
+                            <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">Claim Type</td>
+                            <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">${data.claimType === "delay" ? "Delay for 3 hours or more" : "Cancelled Flight"}</td>
+                          </tr>
+                          ${
+                            data.additionalComments
+                              ? `
+                          <tr>
+                            <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">Additional Comments</td>
+                            <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">${data.additionalComments}</td>
+                          </tr>
+                          `
+                              : ""
+                          }
                           <tr>
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">Departure Airport</td>
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">${data.departureAirport}</td>
@@ -285,7 +298,9 @@ export default function CompensationForm({
         "Thank you for your submission. Please check your email(also spam) for confirmation message."
       )
 
-      router.push(`/Thank-You?name=${encodeURIComponent(data.leadPassengerFullName)}&email=${data.email}`)
+      router.push(
+        `/Thank-You?name=${encodeURIComponent(data.leadPassengerFullName)}&email=${data.email}`
+      )
 
       // Google Tag tracking - this will trigger the event listener in the GoogleTag component
       if (window.dataLayer) {

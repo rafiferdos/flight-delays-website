@@ -21,6 +21,7 @@ export const compensationFormValidationSchema = z.object({
   claimType: z
     .string({ required_error: "Please select claim type" })
     .min(1, "Please select claim type"),
+  additionalComments: z.string().optional(),
   leadPassengerFullName: z
     .string({ required_error: "Please enter passenger name" })
     .min(1, "Please enter passenger name"),
@@ -43,23 +44,10 @@ export const compensationFormValidationSchema = z.object({
       z.object({
         id: z.string(),
         name: z.string().optional(),
-        dob: z.date().optional()
+        dob: z.date().optional(),
+        isUnder18: z.boolean().optional()
       })
     )
     .optional(),
-
   acceptTerms: z.boolean().refine((val) => val === true, "")
 })
-// .superRefine(
-//   ({ additionalPassenger, additionalPassenger1 }, refinementContext) => {
-//     if (additionalPassenger === "Yes") {
-//       if (!additionalPassenger1) {
-//         return refinementContext.addIssue({
-//           code: z.ZodIssueCode.custom,
-//           message: "Please enter passenger name",
-//           path: ["additionalPassenger1"]
-//         })
-//       }
-//     }
-//   }
-// )

@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 // import { cn } from "@/lib/utils"
 import { Trash2 } from "lucide-react"
-import Link from "next/link"
 import { useEffect } from "react"
 import { useFormContext } from "react-hook-form"
 
@@ -207,27 +206,15 @@ export default function CompensationStep3() {
         {/* Professional Terms Text - Italic and Smaller */}
         <div className="rounded-lg bg-gray-50 p-4 text-xs text-gray-600 italic">
           <p className="mb-2">
-            By completing this form you consent to instruct Bolt and Co
-            Solicitors to present a claim to the airline on behalf of the
-            passengers listed above, which could include issuing proceedings.
-            You understand that they work on a no-win-no-fee basis, which means
-            if they aren&apos;t successful you won&apos;t have to pay anything.
-            When they do recover compensation from the airline they will deduct
-            their fees. You confirm your agreements tothese{" "}
-            <Link
-              href="/terms-conditions"
-              className="font-medium text-blue-600 underline hover:text-blue-800"
-            >
-              terms and conditions
-            </Link>{" "}
-            and you also, agree to digitally sign this {" "}
-            <Link
-              href="/terms-conditions"
-              className="font-medium text-blue-600 underline hover:text-blue-800"
-            >
-              letter of claim
-            </Link>
-            which will be sent to the airline in your name.
+            By completing this form you consent to instruct our partner law firm
+            to present a claim to the airline on behalf of the passengers listed
+            above, which could include issuing proceedings. You understand that
+            they work on a no-win-no-fee basis, which means if they aren't
+            successful you won't have to pay anything. When they do recover
+            compensation from the airline they will deduct their fees. You
+            confirm your agreement to these terms and conditions and you also
+            agree to digitally sign this letter of claim which will be sent to
+            the airline in your name.
           </p>
         </div>
 
