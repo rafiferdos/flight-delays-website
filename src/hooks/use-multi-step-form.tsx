@@ -18,6 +18,7 @@ export type UseMultiFormStepsReturn = {
   isLastStep: boolean
   goToNext: () => Promise<boolean>
   goToPrevious: () => void
+  setStep: (step: number) => void
 }
 
 export function useMultiStepForm({
@@ -48,6 +49,12 @@ export function useMultiStepForm({
     }
   }, [currentStep])
 
+  const setStep = useCallback((step: number) => {
+    if (step >= 1 && step <= steps.length) {
+      setCurrentStep(step)
+    }
+  }, [steps.length])
+
   return {
     steps,
     currentStep,
@@ -56,6 +63,7 @@ export function useMultiStepForm({
     isFirstStep: currentStep === 1,
     isLastStep: currentStep === steps.length,
     goToNext,
-    goToPrevious
+    goToPrevious,
+    setStep
   }
 }

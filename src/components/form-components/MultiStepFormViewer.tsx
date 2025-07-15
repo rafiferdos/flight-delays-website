@@ -2,8 +2,9 @@
 import { FormStep } from "@/app/(withCommonLayout)/compensation/_components/CompensationForm"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
+import ProcessingLoader from "@/components/shared/LoadingAnimation/ProcessingLoader"
 import { useMultiStepForm } from "@/hooks/use-multi-step-form"
-import { JSX, useEffect, useRef } from "react"
+import { JSX, useEffect, useRef, useState } from "react"
 
 interface MultiStepViewerProps {
   isSubmitting: boolean
@@ -17,6 +18,7 @@ export function MultiStepViewer({
   form
 }: MultiStepViewerProps) {
   const submitBtnRef = useRef<HTMLButtonElement>(null)
+  const [isShowingLoader, setIsShowingLoader] = useState(false)
 
   const stepFormElements: {
     [key: number]: JSX.Element
@@ -30,7 +32,7 @@ export function MultiStepViewer({
     (index: string) => stepFormElements[Number(index)]
   )
 
-  const { currentStep, isLastStep, isFirstStep, goToNext, goToPrevious } =
+  const { currentStep, isLastStep, isFirstStep, goToNext, goToPrevious, setStep } =
     useMultiStepForm({
       initialSteps: steps,
       onStepValidation: async () => {
@@ -68,6 +70,34 @@ export function MultiStepViewer({
     }
   }, [form, currentStep])
 
+  const handleNextClick = async () => {
+    if (isLastStep) {
+      submitBtnRef.current?.click()
+    } else {
+      // If moving from step 2 to step 3, show loading animation
+      if (currentStep === 2) {
+        // First validate the current step
+        const output = await form.trigger(formSteps[currentStep - 1]?.fields, {
+          shouldFocus: true
+        })
+        
+        if (!output) return // Don't proceed if validation fails
+        
+        // Show loading animation
+        setIsShowingLoader(true)
+      } else {
+        // For other steps, proceed normally
+        goToNext()
+      }
+    }
+  }
+
+  const handleLoaderComplete = () => {
+    setIsShowingLoader(false)
+    // Directly set step to 3 instead of using goToNext()
+    setStep(3)
+  }
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-col items-start gap-y-2">
@@ -79,7 +109,11 @@ export function MultiStepViewer({
       </div>
 
       <div key={currentStep} className="mt-8 mb-8 flex w-full flex-col gap-2">
-        {current}
+        {isShowingLoader ? (
+          <ProcessingLoader onComplete={handleLoaderComplete} duration={4000} />
+        ) : (
+          current
+        )}
       </div>
 
       <div className="justify-between-between flex w-full flex-row gap-3 pt-3">
@@ -91,6 +125,7 @@ export function MultiStepViewer({
               variant="outline"
               onClick={goToPrevious}
               className="shadow-none"
+              disabled={isShowingLoader}
             >
               Previous
             </Button>
@@ -101,14 +136,8 @@ export function MultiStepViewer({
           type="button"
           size="lg"
           variant={"primary"}
-          onClick={() => {
-            if (isLastStep) {
-              submitBtnRef.current?.click()
-            } else {
-              goToNext()
-            }
-          }}
-          disabled={isSubmitting}
+          onClick={handleNextClick}
+          disabled={isSubmitting || isShowingLoader}
         >
           {isLastStep ? "Submit Your Claim" : "Next"}
         </Button>
