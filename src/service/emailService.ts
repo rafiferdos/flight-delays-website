@@ -26,6 +26,7 @@ type SendMailArgs = {
 export interface APIResponseError {
   success: boolean
   message: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   error: any
 }
 
@@ -42,6 +43,7 @@ export const sendEmailMessage = async (data: SendMailArgs) => {
 
     return res
   } catch (error: any) {
+    // eslint-disable-line @typescript-eslint/no-explicit-any
     console.error("Email sending error: =============>", { error })
     return {
       success: false,

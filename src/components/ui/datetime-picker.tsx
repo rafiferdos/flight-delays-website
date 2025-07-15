@@ -8,45 +8,45 @@
  */
 "use client"
 
-import * as React from "react"
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { CalendarIcon, ChevronsUpDownIcon } from "lucide-react"
 import {
+  addHours,
+  addMonths,
+  endOfDay,
   endOfHour,
   endOfMinute,
+  endOfMonth,
+  endOfYear,
   format,
-  parse,
   getMonth,
   getYear,
+  parse,
   setHours,
+  setMilliseconds,
   setMinutes,
   setMonth as setMonthFns,
   setSeconds,
   setYear,
+  startOfDay,
   startOfHour,
   startOfMinute,
-  startOfYear,
   startOfMonth,
-  endOfMonth,
-  endOfYear,
-  addMonths,
-  subMonths,
-  setMilliseconds,
-  addHours,
+  startOfYear,
   subHours,
-  startOfDay,
-  endOfDay
+  subMonths
 } from "date-fns"
 import {
+  CalendarIcon,
   CheckIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  ChevronsUpDownIcon,
   Clock
 } from "lucide-react"
+import * as React from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { DayPicker, Matcher, TZDate } from "react-day-picker"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   Popover,
@@ -54,6 +54,7 @@ import {
   PopoverTrigger
 } from "@/components/ui/popover"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { cn } from "@/lib/utils"
 import { Icon } from "@iconify/react/dist/iconify.js"
 import { inputVariants } from "../form-components/UInput"
 
@@ -691,7 +692,6 @@ function TimePicker({
       }
     }, 1)
     return () => clearTimeout(timeoutId)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open])
 
   const onHourChange = useCallback(
