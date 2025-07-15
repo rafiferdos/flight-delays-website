@@ -82,54 +82,103 @@ export default function HeroCompensationForm() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-4xl">
+    <div className="mx-auto w-full max-w-4xl px-4">
       {/* Glassy Form Container */}
-      <div className="rounded-2xl p-2 ">
+      <div className="rounded-2xl p-2">
         <form onSubmit={(e) => e.preventDefault()}>
-          {/* Unified White Container */}
-          <div className="flex items-center overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-            {/* Departure Airport */}
-            <div className="flex flex-1 items-center border-r border-gray-200 px-4 py-4">
-              <Icon
-                icon="material-symbols:flight-takeoff"
-                className="mr-3 text-gray-400"
-                height={20}
-                width={20}
-              />
-              <Input
-                type="text"
-                placeholder="Departure airport"
-                value={departureAirport}
-                onChange={(e) => setDepartureAirport(e.target.value)}
-                className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
-              />
-            </div>
+          {/* Mobile Layout */}
+          <div className="block sm:hidden">
+            <div className="space-y-3">
+              {/* Departure Airport */}
+              <div className="flex items-center overflow-hidden rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
+                <Icon
+                  icon="material-symbols:flight-takeoff"
+                  className="mr-3 text-gray-400"
+                  height={20}
+                  width={20}
+                />
+                <Input
+                  type="text"
+                  placeholder="Departure airport"
+                  value={departureAirport}
+                  onChange={(e) => setDepartureAirport(e.target.value)}
+                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                />
+              </div>
 
-            {/* Arrival Airport - NO border-r */}
-            <div className="flex flex-1 items-center px-4 py-4">
-              <Icon
-                icon="material-symbols:flight-land"
-                className="mr-3 text-gray-400"
-                height={20}
-                width={20}
-              />
-              <Input
-                type="text"
-                placeholder="Final destination airport"
-                value={arrivalAirport}
-                onChange={(e) => setArrivalAirport(e.target.value)}
-                className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
-              />
-            </div>
+              {/* Arrival Airport */}
+              <div className="flex items-center overflow-hidden rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
+                <Icon
+                  icon="material-symbols:flight-land"
+                  className="mr-3 text-gray-400"
+                  height={20}
+                  width={20}
+                />
+                <Input
+                  type="text"
+                  placeholder="Final destination airport"
+                  value={arrivalAirport}
+                  onChange={(e) => setArrivalAirport(e.target.value)}
+                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                />
+              </div>
 
-            {/* Check Compensation Button */}
-            <div className="px-2 py-2">
+              {/* Check Compensation Button */}
               <Button
-                className="h-12 rounded-xl bg-blue-600 px-6 font-semibold text-white transition-colors hover:bg-blue-700"
+                className="h-12 w-full rounded-xl bg-blue-600 font-semibold text-white transition-colors hover:bg-blue-700"
                 onClick={handleSubmit}
               >
                 Check Compensation
               </Button>
+            </div>
+          </div>
+
+          {/* Desktop Layout - Keep same as current */}
+          <div className="hidden sm:block">
+            <div className="flex items-center overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+              {/* Departure Airport */}
+              <div className="flex flex-1 items-center border-r border-gray-200 px-4 py-4">
+                <Icon
+                  icon="material-symbols:flight-takeoff"
+                  className="mr-3 text-gray-400"
+                  height={20}
+                  width={20}
+                />
+                <Input
+                  type="text"
+                  placeholder="Departure airport"
+                  value={departureAirport}
+                  onChange={(e) => setDepartureAirport(e.target.value)}
+                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                />
+              </div>
+
+              {/* Arrival Airport - NO border-r */}
+              <div className="flex flex-1 items-center px-4 py-4">
+                <Icon
+                  icon="material-symbols:flight-land"
+                  className="mr-3 text-gray-400"
+                  height={20}
+                  width={20}
+                />
+                <Input
+                  type="text"
+                  placeholder="Final destination airport"
+                  value={arrivalAirport}
+                  onChange={(e) => setArrivalAirport(e.target.value)}
+                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                />
+              </div>
+
+              {/* Check Compensation Button */}
+              <div className="px-2 py-2">
+                <Button
+                  className="h-12 rounded-xl bg-blue-600 px-6 font-semibold text-white transition-colors hover:bg-blue-700"
+                  onClick={handleSubmit}
+                >
+                  Check Compensation
+                </Button>
+              </div>
             </div>
           </div>
         </form>
