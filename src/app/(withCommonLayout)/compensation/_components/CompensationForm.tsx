@@ -41,10 +41,16 @@ export default function CompensationForm({
       acceptTerms: false,
       departureAirport: searchParams?.departureAirport as string | undefined,
       arrivalAirport: searchParams?.arrivalAirport as string | undefined,
+      claimType: "",
+      additionalComments: "",
+      leadPassengerFullName: "",
+      email: "",
+      contact: "",
+      additionalPassenger: "",
       additionalPassengers: [
-        { id: "passenger-1", name: "" },
-        { id: "passenger-2", name: "" },
-        { id: "passenger-3", name: "" }
+        { id: "passenger-1", name: "", isUnder18: false },
+        { id: "passenger-2", name: "", isUnder18: false },
+        { id: "passenger-3", name: "", isUnder18: false }
       ]
     }
   })
