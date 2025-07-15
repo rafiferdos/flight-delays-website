@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useMultiStepForm } from "@/hooks/use-multi-step-form"
+import { FormStep } from "@/app/(withCommonLayout)/compensation/_components/CompensationForm"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
+import { useMultiStepForm } from "@/hooks/use-multi-step-form"
 import { JSX, useEffect, useRef } from "react"
-import { FormStep } from "@/app/(withCommonLayout)/compensation/_components/CompensationForm"
 
 interface MultiStepViewerProps {
   isSubmitting: boolean

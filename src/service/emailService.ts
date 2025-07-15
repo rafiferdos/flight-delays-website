@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server"
 import nodemailer from "nodemailer"
 
@@ -43,7 +42,7 @@ export const sendEmailMessage = async (data: SendMailArgs) => {
 
     return res
   } catch (error: any) {
-    console.log("Email sending error: =============>", { error })
+    console.error("Email sending error: =============>", { error })
     return {
       success: false,
       message: error.message,

@@ -186,9 +186,9 @@ export default function CompensationStep3() {
             Solicitors to present a claim to the airline on behalf of the
             passengers listed above, which could include issuing proceedings.
             You understand that they work on a no-win-no-fee basis, which means
-            if they aren't successful you won't have to pay anything. When they
-            do recover compensation from the airline they will deduct their
-            fees. You confirm your agreements to{" "}
+            if they aren&apos;t successful you won&apos;t have to pay anything.
+            When they do recover compensation from the airline they will deduct
+            their fees. You confirm your agreements to{" "}
             <Link
               href="/terms-conditions"
               className="font-medium text-blue-600 underline hover:text-blue-800"
