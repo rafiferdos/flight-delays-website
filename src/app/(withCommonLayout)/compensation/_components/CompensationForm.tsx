@@ -285,7 +285,7 @@ export default function CompensationForm({
         "Thank you for your submission. Please check your email(also spam) for confirmation message."
       )
 
-      router.push(`/compensation/track?email=${data.email}`)
+      router.push(`/Thank-You?name=${encodeURIComponent(data.leadPassengerFullName)}&email=${data.email}`)
 
       // Google Tag tracking - this will trigger the event listener in the GoogleTag component
       if (window.dataLayer) {
