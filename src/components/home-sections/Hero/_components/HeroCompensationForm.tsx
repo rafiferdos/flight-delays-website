@@ -43,11 +43,11 @@ export default function HeroCompensationForm() {
           {/* Mobile Layout */}
           {/* Mobile Layout - Boarding Pass design */}
           <div className="block sm:hidden">
-            <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/90 shadow-lg backdrop-blur-sm">
-              {/* Input fields section */}
-              <div className="space-y-4 p-4">
+            <div className="overflow-hidden rounded-2xl shadow-lg backdrop-blur-sm">
+              {/* Top section with inputs */}
+              <div className="bg-white/90">
                 {/* Departure Airport */}
-                <div className="flex items-center rounded-lg border border-gray-200 bg-white/50 px-4 py-3">
+                <div className="flex items-center border-b border-gray-200 px-4 py-4">
                   <Icon
                     icon="material-symbols:flight-takeoff"
                     className="mr-3 text-gray-400"
@@ -64,7 +64,7 @@ export default function HeroCompensationForm() {
                 </div>
 
                 {/* Arrival Airport */}
-                <div className="flex items-center rounded-lg border border-gray-200 bg-white/50 px-4 py-3">
+                <div className="flex items-center px-4 py-4">
                   <Icon
                     icon="material-symbols:flight-land"
                     className="mr-3 text-gray-400"
@@ -81,8 +81,15 @@ export default function HeroCompensationForm() {
                 </div>
               </div>
 
-              {/* Check Compensation Button */}
-              <div className="px-4 pb-4">
+              {/* Ticket perforation line */}
+              <div className="relative bg-white/90 px-4 py-2">
+                <div className="border-t border-dashed border-gray-300"></div>
+                <div className="absolute top-1/2 -left-3 h-6 w-6 -translate-y-1/2 transform rounded-full bg-accent-foreground"></div>
+                <div className="absolute top-1/2 -right-3 h-6 w-6 -translate-y-1/2 transform rounded-full bg-accent-foreground"></div>
+              </div>
+
+              {/* Bottom section with button */}
+              <div className="bg-white/90 p-4">
                 <Button
                   className="h-12 w-full rounded-xl bg-blue-600 font-semibold text-white transition-colors hover:bg-blue-700"
                   onClick={handleSubmit}
