@@ -14,8 +14,8 @@ const Facilities = [
 
 export default function Hero() {
   return (
-    <section className="px-24 py-4">
-      <div className="relative grid place-items-center overflow-x-hidden lg:min-h-[90dvh]">
+    <section className="px-4 py-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="relative grid min-h-[80dvh] place-items-center overflow-x-hidden sm:min-h-[85dvh] lg:min-h-[90dvh]">
         {/* ------------------ Bg Image ---------------------- */}
         <Image
           src={heroBg}
@@ -23,23 +23,26 @@ export default function Hero() {
           fill
           placeholder="blur"
           priority={true}
-          sizes="(max-width: 768px) 33vw, (max-width: 1200px) 75vw, 100vw"
-          className="absolute inset-0 -z-10 h-full w-full rounded-xl object-cover object-[35%] lg:object-center"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 100vw"
+          className="absolute inset-0 -z-10 h-full w-full rounded-xl object-cover object-[35%] sm:object-[40%] lg:object-center"
         />
         {/* --------------------------------------------------- */}
 
-        <ResponsiveContainer className="flex h-full flex-col items-center justify-center gap-y-8 py-8 text-center">
+        <ResponsiveContainer className="flex h-full flex-col items-center justify-center gap-y-6 py-6 text-center sm:gap-y-8 sm:py-8">
           {/* ------------------ Trustpilot Banner ---------------------- */}
           <div className="w-full max-w-4xl">
-            <div className="flex items-center justify-center gap-x-3">
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 sm:gap-x-3">
               <Icon
                 icon="simple-icons:trustpilot"
                 color="#00b67a"
-                height={20}
-                width={20}
+                height={18}
+                width={18}
+                className="sm:h-5 sm:w-5"
               />
-              <span className="text-sm font-medium text-white">Trustpilot</span>
-              <span className="text-sm font-semibold text-white">
+              <span className="text-xs font-medium text-white sm:text-sm">
+                Trustpilot
+              </span>
+              <span className="text-xs font-semibold text-white sm:text-sm">
                 Excellent
               </span>
               <div className="flex gap-x-1">
@@ -48,8 +51,9 @@ export default function Hero() {
                     <Icon
                       icon="material-symbols:star"
                       color="white"
-                      height={16}
-                      width={16}
+                      height={14}
+                      width={14}
+                      className="sm:h-4 sm:w-4"
                     />
                   </div>
                 ))}
@@ -57,8 +61,9 @@ export default function Hero() {
                   <Icon
                     icon="material-symbols:star"
                     color="white"
-                    height={16}
-                    width={16}
+                    height={14}
+                    width={14}
+                    className="sm:h-4 sm:w-4"
                   />
                   <div
                     className="absolute inset-0 bg-[#00b67a]"
@@ -68,8 +73,9 @@ export default function Hero() {
                       <Icon
                         icon="material-symbols:star"
                         color="white"
-                        height={16}
-                        width={16}
+                        height={14}
+                        width={14}
+                        className="sm:h-4 sm:w-4"
                       />
                     </div>
                   </div>
@@ -80,15 +86,15 @@ export default function Hero() {
 
           {/* ------------------ Main Content ---------------------- */}
           <div className="w-full max-w-4xl text-white">
-            <h1 className="lg:text-h1 text-h2 mb-4 leading-tight font-bold lg:leading-16 2xl:leading-20">
+            <h1 className="lg:text-h1 mb-3 text-2xl leading-tight font-bold sm:mb-4 sm:text-3xl md:text-4xl lg:leading-16 2xl:leading-20">
               Did you have a delayed or cancelled flight?
             </h1>
 
-            <h2 className="text-h3 lg:text-h2 mb-6 font-bold text-[#7fdaf2]">
+            <h2 className="lg:text-h2 mb-4 text-xl font-bold text-[#7fdaf2] sm:mb-6 sm:text-2xl md:text-3xl">
               Get up to £520!
             </h2>
 
-            <p className="mx-auto mb-8 max-w-2xl text-lg font-medium text-white/90">
+            <p className="mx-auto mb-6 max-w-2xl px-2 text-sm font-medium text-white/90 sm:mb-8 sm:px-0 sm:text-base lg:text-lg">
               Claim up to £520 compensation per passenger- No matter the ticket
               price! At Flight Delay Claims, we{" "}
               <span className="font-extrabold text-[#7fdaf2]">simplify</span>{" "}
@@ -100,17 +106,17 @@ export default function Hero() {
 
           {/* ------------------ Form Section ---------------------- */}
           <div className="w-full max-w-4xl">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-xl sm:rounded-2xl sm:p-6">
               {/* check compensation gradient text */}
-              <h3 className="mb-8 text-center text-4xl font-bold text-[#7fdaf2]">
+              <h3 className="mb-6 text-center text-2xl font-bold text-[#7fdaf2] sm:mb-8 sm:text-3xl md:text-4xl">
                 Check Compensation
               </h3>
               {/* Use Original Form Component for Functionality */}
               <CheckCompensationForm />
 
               {/* ------------------ Boarding Pass Option ---------------------- */}
-              <div className="mt-4 flex items-center gap-x-2">
-                <span className="text-sm font-medium text-white/90">
+              <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-x-2">
+                <span className="text-xs font-medium text-white/90 sm:text-sm">
                   OR FAST CHECK WITH
                 </span>
                 <Button
@@ -123,14 +129,16 @@ export default function Hero() {
                     height={16}
                     width={16}
                   />
-                  <span className="text-sm font-medium">Boarding pass</span>
+                  <span className="text-xs font-medium sm:text-sm">
+                    Boarding pass
+                  </span>
                 </Button>
               </div>
             </div>
           </div>
 
           {/* ------------------ Facilities ---------------------- */}
-          <div className="flex w-full max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-4 lg:justify-between">
+          <div className="flex w-full max-w-4xl flex-col items-center justify-center gap-y-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-4 lg:justify-between lg:gap-x-8">
             {Facilities.map((facility) => (
               <div
                 key={facility}
@@ -139,10 +147,13 @@ export default function Hero() {
                 <Icon
                   icon="lets-icons:check-fill"
                   color="var(--secondary)"
-                  height={25}
-                  width={25}
+                  height={20}
+                  width={20}
+                  className="sm:h-6 sm:w-6"
                 />
-                <span className="text-lg font-medium">{facility}</span>
+                <span className="text-base font-medium sm:text-lg">
+                  {facility}
+                </span>
               </div>
             ))}
           </div>
