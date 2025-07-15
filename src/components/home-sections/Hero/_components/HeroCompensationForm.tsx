@@ -38,52 +38,65 @@ export default function HeroCompensationForm() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4">
-      <div className="rounded-2xl p-2">
+      <div className="rounded-2xl p-2 sm:border-transparent sm:bg-transparent ">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* Mobile Layout */}
+          {/* Mobile Layout - Ticket-like design */}
           <div className="block sm:hidden">
-            <div className="space-y-3">
-              {/* Departure Airport */}
-              <div className="flex items-center overflow-hidden rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
-                <Icon
-                  icon="material-symbols:flight-takeoff"
-                  className="mr-3 text-gray-400"
-                  height={20}
-                  width={20}
-                />
-                <Input
-                  type="text"
-                  placeholder="Departure airport"
-                  value={departureAirport}
-                  onChange={(e) => setDepartureAirport(e.target.value)}
-                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
-                />
+            <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg">
+              {/* Top section with inputs */}
+              <div className="bg-white">
+                {/* Departure Airport */}
+                <div className="flex items-center border-b border-gray-200 px-4 py-4">
+                  <Icon
+                    icon="material-symbols:flight-takeoff"
+                    className="mr-3 text-gray-400"
+                    height={20}
+                    width={20}
+                  />
+                  <Input
+                    type="text"
+                    placeholder="Departure airport"
+                    value={departureAirport}
+                    onChange={(e) => setDepartureAirport(e.target.value)}
+                    className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  />
+                </div>
+
+                {/* Arrival Airport */}
+                <div className="flex items-center px-4 py-4">
+                  <Icon
+                    icon="material-symbols:flight-land"
+                    className="mr-3 text-gray-400"
+                    height={20}
+                    width={20}
+                  />
+                  <Input
+                    type="text"
+                    placeholder="Final destination airport"
+                    value={arrivalAirport}
+                    onChange={(e) => setArrivalAirport(e.target.value)}
+                    className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  />
+                </div>
               </div>
 
-              {/* Arrival Airport */}
-              <div className="flex items-center overflow-hidden rounded-xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
-                <Icon
-                  icon="material-symbols:flight-land"
-                  className="mr-3 text-gray-400"
-                  height={20}
-                  width={20}
-                />
-                <Input
-                  type="text"
-                  placeholder="Final destination airport"
-                  value={arrivalAirport}
-                  onChange={(e) => setArrivalAirport(e.target.value)}
-                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
-                />
+              {/* Ticket perforation line */}
+              <div className="relative bg-gray-50 px-4 py-2">
+                <div className="border-t border-dashed border-gray-300"></div>
+                <div className="absolute top-1/2 -left-2 h-4 w-4 -translate-y-1/2 transform rounded-full bg-gradient-to-br from-purple-400 to-blue-600"></div>
+                <div className="absolute top-1/2 -right-2 h-4 w-4 -translate-y-1/2 transform rounded-full bg-gradient-to-br from-purple-400 to-blue-600"></div>
               </div>
 
-              {/* Check Compensation Button */}
-              <Button
-                className="h-12 w-full rounded-xl bg-blue-600 font-semibold text-white transition-colors hover:bg-blue-700"
-                onClick={handleSubmit}
-              >
-                Check Compensation
-              </Button>
+              {/* Bottom section with button */}
+              <div className="bg-white p-4">
+                <Button
+                  className="h-12 w-full rounded-xl bg-blue-600 font-semibold text-white transition-colors hover:bg-blue-700"
+                  onClick={handleSubmit}
+                >
+                  Check Compensation
+                </Button>
+              </div>
             </div>
           </div>
 
