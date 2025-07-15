@@ -45,9 +45,9 @@ export default function HeroCompensationForm() {
           <div className="block sm:hidden">
             <div className="overflow-hidden rounded-2xl shadow-lg backdrop-blur-sm">
               {/* Top section with inputs */}
-              <div className="bg-white/90">
+              <div className="bg-white/90 p-4 space-y-2">
                 {/* Departure Airport */}
-                <div className="flex items-center border-b border-gray-200 px-4 py-4">
+                <div className="flex items-center border-b border-gray-200 px-4 py-4 bg-white/90 rounded-xl">
                   <Icon
                     icon="material-symbols:flight-takeoff"
                     className="mr-3 text-gray-400"
@@ -64,7 +64,7 @@ export default function HeroCompensationForm() {
                 </div>
 
                 {/* Arrival Airport */}
-                <div className="flex items-center px-4 py-4">
+                <div className="flex items-center px-4 py-4 bg-white/90 rounded-xl">
                   <Icon
                     icon="material-symbols:flight-land"
                     className="mr-3 text-gray-400"
