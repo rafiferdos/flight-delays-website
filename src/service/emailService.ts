@@ -26,8 +26,7 @@ type SendMailArgs = {
 export interface APIResponseError {
   success: boolean
   message: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  error: any
+  error: any // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export const sendEmailMessage = async (data: SendMailArgs) => {
