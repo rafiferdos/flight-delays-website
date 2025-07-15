@@ -213,15 +213,21 @@ export default function CompensationStep3() {
             You understand that they work on a no-win-no-fee basis, which means
             if they aren&apos;t successful you won&apos;t have to pay anything.
             When they do recover compensation from the airline they will deduct
-            their fees. You confirm your agreements to{" "}
+            their fees. You confirm your agreements tothese{" "}
             <Link
               href="/terms-conditions"
               className="font-medium text-blue-600 underline hover:text-blue-800"
             >
-              these terms and conditions
+              terms and conditions
             </Link>{" "}
-            and you also, agree to digitally sign this letter of claim which
-            will be sent to the airline in your name.
+            and you also, agree to digitally sign this
+            <Link
+              href="/terms-conditions"
+              className="font-medium text-blue-600 underline hover:text-blue-800"
+            >
+              letter of claim
+            </Link>
+            which will be sent to the airline in your name.
           </p>
         </div>
 
