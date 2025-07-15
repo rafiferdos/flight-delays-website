@@ -26,7 +26,7 @@ type SendMailArgs = {
 export interface APIResponseError {
   success: boolean
   message: string
-  error: any // eslint-disable-line @typescript-eslint/no-explicit-any
+  error: Error | unknown
 }
 
 export const sendEmailMessage = async (data: SendMailArgs) => {
@@ -41,12 +41,13 @@ export const sendEmailMessage = async (data: SendMailArgs) => {
     })
 
     return res
-  } catch (error: any) {
-    // eslint-disable-line @typescript-eslint/no-explicit-any
+  } catch (error: unknown) {
     console.error("Email sending error: =============>", { error })
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred"
     return {
       success: false,
-      message: error.message,
+      message: errorMessage,
       error: error
     }
   }

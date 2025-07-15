@@ -2,21 +2,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import { SubmitHandler, useForm } from "react-hook-form"
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { compensationFormValidationSchema } from "@/zod/compensationForm.validation"
 import { MultiStepViewer } from "@/components/form-components/MultiStepFormViewer"
+import { Form } from "@/components/ui/form"
+import envConfig from "@/config/envConfig"
+import { APIResponseError, sendEmailMessage } from "@/service/emailService"
+import { compensationFormValidationSchema } from "@/zod/compensationForm.validation"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { format } from "date-fns"
+import { useRouter } from "nextjs-toploader/app"
+import { JSX } from "react"
+import { SubmitHandler, useForm } from "react-hook-form"
+import { toast } from "sonner"
+import { z } from "zod"
 import CompensationStep1 from "../_compensation_forms/step-1"
 import CompensationStep2 from "../_compensation_forms/step-2"
 import CompensationStep3 from "../_compensation_forms/step-3"
-import { Form } from "@/components/ui/form"
-import { JSX } from "react"
-import { useRouter } from "nextjs-toploader/app"
-import { APIResponseError, sendEmailMessage } from "@/service/emailService"
-import { toast } from "sonner"
-import { format } from "date-fns"
-import envConfig from "@/config/envConfig"
 
 export interface FormStep {
   step: number
@@ -196,10 +196,7 @@ export default function CompensationForm({
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">Flight Number</td>
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">${data.flightNumber}</td>
                           </tr>
-                          <tr>
-                            <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">Booking Reference Number</td>
-                            <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">${data.bookingReferenceNumber}</td>
-                          </tr>
+
                           <tr>
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">Departure Airport</td>
                             <td style="border-bottom: 1px solid #dee2e6; padding: 8px;">${data.departureAirport}</td>
