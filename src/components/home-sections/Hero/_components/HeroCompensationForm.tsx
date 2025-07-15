@@ -37,17 +37,17 @@ export default function HeroCompensationForm() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4">
-      <div className="rounded-2xl p-2 sm:border-transparent sm:bg-transparent ">
+    <div className="mx-auto w-full max-w-4xl">
+      <div className="rounded-2xl sm:border-transparent sm:bg-transparent">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* Mobile Layout */}
-          {/* Mobile Layout - Ticket-like design */}
+          {/* Mobile Layout - Boarding Pass design */}
           <div className="block sm:hidden">
-            <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg">
-              {/* Top section with inputs */}
-              <div className="bg-white">
+            <div className="overflow-hidden rounded-2xl border border-white/20 bg-white/90 shadow-lg backdrop-blur-sm">
+              {/* Input fields section */}
+              <div className="space-y-4 p-4">
                 {/* Departure Airport */}
-                <div className="flex items-center border-b border-gray-200 px-4 py-4">
+                <div className="flex items-center rounded-lg border border-gray-200 bg-white/50 px-4 py-3">
                   <Icon
                     icon="material-symbols:flight-takeoff"
                     className="mr-3 text-gray-400"
@@ -64,7 +64,7 @@ export default function HeroCompensationForm() {
                 </div>
 
                 {/* Arrival Airport */}
-                <div className="flex items-center px-4 py-4">
+                <div className="flex items-center rounded-lg border border-gray-200 bg-white/50 px-4 py-3">
                   <Icon
                     icon="material-symbols:flight-land"
                     className="mr-3 text-gray-400"
@@ -81,15 +81,8 @@ export default function HeroCompensationForm() {
                 </div>
               </div>
 
-              {/* Ticket perforation line */}
-              <div className="relative bg-gray-50 px-4 py-2">
-                <div className="border-t border-dashed border-gray-300"></div>
-                <div className="absolute top-1/2 -left-2 h-4 w-4 -translate-y-1/2 transform rounded-full bg-gradient-to-br from-purple-400 to-blue-600"></div>
-                <div className="absolute top-1/2 -right-2 h-4 w-4 -translate-y-1/2 transform rounded-full bg-gradient-to-br from-purple-400 to-blue-600"></div>
-              </div>
-
-              {/* Bottom section with button */}
-              <div className="bg-white p-4">
+              {/* Check Compensation Button */}
+              <div className="px-4 pb-4">
                 <Button
                   className="h-12 w-full rounded-xl bg-blue-600 font-semibold text-white transition-colors hover:bg-blue-700"
                   onClick={handleSubmit}
