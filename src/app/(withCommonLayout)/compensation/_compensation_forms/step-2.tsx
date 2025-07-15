@@ -2,7 +2,6 @@
 
 import RequiredSign from "@/components/form-components/RequiredSign"
 import UInput from "@/components/form-components/UInput"
-import URadioGroup from "@/components/form-components/URadioGroup"
 import { AutoComplete, AutoCompleteOption } from "@/components/ui/autocomplete"
 import {
   FormControl,
@@ -159,12 +158,7 @@ export default function CompensationStep2() {
     }
   }, [airlineSearchParam, searchParams, setValue])
 
-  const handleRemoveParam = (paramToRemove: string) => {
-    const params = new URLSearchParams(searchParams.toString())
-    params.delete(paramToRemove)
 
-    router.push(`?${params.toString()}`)
-  }
 
   return (
     <div className="grid gap-6">

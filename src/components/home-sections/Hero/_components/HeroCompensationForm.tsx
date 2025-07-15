@@ -2,12 +2,9 @@
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import envConfig from "@/config/envConfig"
-import useDebounce from "@/hooks/useDebounce"
 import { Icon } from "@iconify/react/dist/iconify.js"
 import { useRouter } from "nextjs-toploader/app"
-import { useEffect, useState } from "react"
-import { toast } from "sonner"
+import { useState } from "react"
 
 export interface IAirportSearchResult {
   airport_id: string
@@ -30,49 +27,7 @@ export default function HeroCompensationForm() {
   const [departureAirport, setDepartureAirport] = useState<string>("")
   const [arrivalAirport, setArrivalAirport] = useState<string>("")
 
-  // Search States
   const router = useRouter()
-  const [searchLoading, setSearchLoading] = useState<boolean>(false)
-  const [searchQuery, setSearchQuery] = useState<string>("")
-  const [searchResults, setSearchResults] = useState<IAirportSearchResult[]>([])
-
-  const debouncedSearchQuery = useDebounce(searchQuery, 500)
-
-  // Get search results based on debounced search query
-  useEffect(() => {
-    const fetchResults = async () => {
-      if (debouncedSearchQuery?.length < 3) {
-        return
-      }
-
-      const apiKey = envConfig.apiKey
-
-      if (!apiKey) {
-        toast.error("Server is experiencing issues. Please try again later.")
-        return
-      }
-
-      setSearchLoading(true)
-      try {
-        const res = await fetch(
-          envConfig.apiBaseUrl +
-            `/airports?access_key=${apiKey}&search=${debouncedSearchQuery}&limit=9999999`
-        )
-        const data = await res.json()
-
-        setSearchResults(data?.data)
-      } catch (error) {
-        console.error("Fetch error:", error)
-        setSearchResults([])
-      } finally {
-        setSearchLoading(false)
-      }
-    }
-
-    if (debouncedSearchQuery.trim()) {
-      fetchResults()
-    }
-  }, [debouncedSearchQuery])
 
   const handleSubmit = () => {
     router.push(

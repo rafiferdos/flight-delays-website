@@ -115,11 +115,25 @@ export const StatsData: IStat[] = [
 export const CompensationRules = [
   <>
     <strong>You could claim up to £520 per passenger</strong> if your flight
-    arrived <strong>3+ hours late</strong>, provided the delay was <strong>the airline's fault</strong> (not due
-    to extraordinary circumstances like weather or strikes)
+    arrived <strong>3+ hours late</strong>, provided the delay was{" "}
+    <strong>the airline&apos;s fault</strong> (not due to extraordinary
+    circumstances like weather or strikes)
   </>,
-  <><strong>Compensation may also be due if your flight was cancelled, you were Involuntarily denied boarding, or missed a connecting flight.</strong> In some cases, you could also be entitled to a <strong>full flight refund.</strong></>,
-  <> Your right to claim is <strong>protected under UK & EU Regulation 261</strong>, which has been carried into UK law. These rights apply to flights from up to <strong> 6 years ago.</strong>  </>
+  <>
+    <strong>
+      Compensation may also be due if your flight was cancelled, you were
+      Involuntarily denied boarding, or missed a connecting flight.
+    </strong>{" "}
+    In some cases, you could also be entitled to a{" "}
+    <strong>full flight refund.</strong>
+  </>,
+  <>
+    {" "}
+    Your right to claim is{" "}
+    <strong>protected under UK & EU Regulation 261</strong>, which has been
+    carried into UK law. These rights apply to flights from up to{" "}
+    <strong> 6 years ago.</strong>{" "}
+  </>
 ]
 
 export const CompensationRights = [
@@ -248,35 +262,40 @@ export const CompensationProcessData: ICompensationProcess[] = [
     number: "01",
     title: "Check Eligibility",
     subtitle: "Submit your claim",
-    description: "We make sure everything's quick and easy, and that your data's safe."
+    description:
+      "We make sure everything&apos;s quick and easy, and that your data&apos;s safe."
   },
   {
     key: "process-2",
     number: "02",
     title: "Claim Analysis",
-    subtitle: "Our expert's review",
-    description: "Our specialists use advanced tech and flight data to validate your claim."
+    subtitle: "Our expert&apos;s review",
+    description:
+      "Our specialists use advanced tech and flight data to validate your claim."
   },
   {
     key: "process-3",
     number: "03",
     title: "We Take Action",
     subtitle: "We submit your claim",
-    description: "We handle the paperwork and contact the airline on your behalf."
+    description:
+      "We handle the paperwork and contact the airline on your behalf."
   },
   {
     key: "process-4",
     number: "04",
     title: "We Handle Everything",
     subtitle: "We negotiate for you",
-    description: "Our team builds a strong case and pushes for maximum compensation."
+    description:
+      "Our team builds a strong case and pushes for maximum compensation."
   },
   {
     key: "process-5",
     number: "05",
     title: "You Get Paid",
     subtitle: "You receive your compensation",
-    description: "Once approved, we transfer your money straight to your account."
+    description:
+      "Once approved, we transfer your money straight to your account."
   }
 ]
 

@@ -1,11 +1,11 @@
+import airplaneImg from "@/assets/images/home/claim-compensation/aeroplane.svg"
+import arrowIcon from "@/assets/images/home/claim-compensation/arrow.svg"
+import ResponsiveContainer from "@/components/containers/ResponsiveContainer"
 import {
   CompensationRights,
   CompensationRules
 } from "@/constants/home.constants"
-import arrowIcon from "@/assets/images/home/claim-compensation/arrow.svg"
 import Image from "next/image"
-import ResponsiveContainer from "@/components/containers/ResponsiveContainer"
-import airplaneImg from "@/assets/images/home/claim-compensation/aeroplane.svg"
 
 export default function RulesAndRights() {
   return (
@@ -18,7 +18,7 @@ export default function RulesAndRights() {
 
         <div className="mt-6 space-y-4">
           {CompensationRules.map((rule, index) => (
-            <div key={rule + index} className="flex items-baseline gap-x-4">
+            <div key={`rule-${index}`} className="flex items-baseline gap-x-4">
               <Image src={arrowIcon} alt="Arrow Icon" height={20} width={20} />
               <p className="text-gray-600">{rule}</p>
             </div>

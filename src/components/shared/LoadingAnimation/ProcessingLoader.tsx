@@ -8,8 +8,7 @@ interface ProcessingLoaderProps {
 }
 
 export default function ProcessingLoader({
-  onComplete,
-  duration = 4000
+  onComplete
 }: ProcessingLoaderProps) {
   const [progress, setProgress] = useState(0)
   const [currentMessage, setCurrentMessage] = useState("")
