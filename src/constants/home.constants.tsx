@@ -15,9 +15,9 @@ interface IStat {
 export const StatsData: IStat[] = [
   {
     key: "compensationClaimed",
-    stat: "£75m", // Ensure this is a string
+    stat: "£82m", // Ensure this is a string
     valueText: "+",
-    label: "claimed in compensation from the airlines",
+    label: "compensation claimed",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,9 +41,9 @@ export const StatsData: IStat[] = [
   },
   {
     key: "peopleCompensated",
-    stat: "600,000", // Ensure this is a string
+    stat: "700,000", // Ensure this is a string
     valueText: "+",
-    label: "passengers who've chosen us to make a claim",
+    label: "passengers helped",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -60,10 +60,10 @@ export const StatsData: IStat[] = [
     )
   },
   {
-    key: "payoutAmount",
-    stat: "£520", // Ensure this is a string
-    valueText: "",
-    label: "claim up to",
+    key: "ensurity",
+    stat: "100", // Ensure this is a string
+    valueText: "%",
+    label: "of airlines",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -81,10 +81,10 @@ export const StatsData: IStat[] = [
     )
   },
   {
-    key: "payoutTime",
-    stat: "1", // Ensure this is a string
-    valueText: " week",
-    label: "receive a pay out in as little as",
+    key: "experience",
+    stat: "7", // Ensure this is a string
+    valueText: "+",
+    label: "years in business",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

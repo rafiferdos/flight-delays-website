@@ -6,9 +6,9 @@ import CheckCompensationForm from "./_components/HeroCompensationForm"
 
 //* Constant Data
 const Facilities = [
-  "Free to Check",
-  "Only Takes 2 minutes",
-  "Fast payouts, hassle free"
+  "Free compensation check",
+  "Fast & Risk-Free",
+  "Highest Success Rate"
 ]
 
 export default function Hero() {
