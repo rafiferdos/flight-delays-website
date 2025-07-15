@@ -9,7 +9,6 @@ import {
   CommandItem,
   CommandList
 } from "@/components/ui/command"
-import { Label } from "@/components/ui/label"
 import {
   Popover,
   PopoverContent,
@@ -106,16 +105,14 @@ export default function HeroCompensationForm() {
   }
 
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="w-full">
-      {/* Mobile Ticket Layout */}
-      <div className="block sm:hidden">
-        <div className="space-y-4">
-          {/* Departure Airport */}
-          <div className="space-y-2">
-            <Label className="block text-left text-sm font-medium text-gray-700">
-              Departure airport
-            </Label>
-            <div className="flex h-12 items-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+    <div className="mx-auto w-full max-w-4xl">
+      {/* Glassy Form Container */}
+      <div className="rounded-2xl border border-white/20 bg-white/10 p-6 shadow-lg backdrop-blur-sm">
+        <form onSubmit={(e) => e.preventDefault()}>
+          {/* Unified White Container */}
+          <div className="flex items-center overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+            {/* Departure Airport */}
+            <div className="flex flex-1 items-center border-r border-gray-200 px-4 py-4">
               <Icon
                 icon="material-symbols:flight-takeoff"
                 className="mr-3 text-gray-400"
@@ -138,7 +135,7 @@ export default function HeroCompensationForm() {
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-[280px] p-0">
+                <PopoverContent className="w-[300px] p-0">
                   <Command>
                     <CommandInput
                       placeholder="Search airport..."
@@ -182,14 +179,9 @@ export default function HeroCompensationForm() {
                 </PopoverContent>
               </Popover>
             </div>
-          </div>
 
-          {/* Arrival Airport */}
-          <div className="space-y-2">
-            <Label className="block text-left text-sm font-medium text-gray-700">
-              Final destination airport
-            </Label>
-            <div className="flex h-12 items-center rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+            {/* Arrival Airport */}
+            <div className="flex flex-1 items-center border-r border-gray-200 px-4 py-4">
               <Icon
                 icon="material-symbols:flight-land"
                 className="mr-3 text-gray-400"
@@ -212,7 +204,7 @@ export default function HeroCompensationForm() {
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-[280px] p-0">
+                <PopoverContent className="w-[300px] p-0">
                   <Command>
                     <CommandInput
                       placeholder="Search airport..."
@@ -256,182 +248,19 @@ export default function HeroCompensationForm() {
                 </PopoverContent>
               </Popover>
             </div>
-          </div>
 
-          {/* Check Compensation Button */}
-          <Button
-            className="h-12 w-full rounded-lg bg-blue-600 font-semibold text-white hover:bg-blue-700"
-            onClick={handleSubmit}
-          >
-            Check Compensation
-          </Button>
-        </div>
-      </div>
-
-      {/* Desktop Layout */}
-      <div className="hidden sm:block">
-        <div className="mb-4 grid grid-cols-1 gap-3 sm:gap-4 lg:grid-cols-3 lg:gap-2">
-          {/* Departure Airport */}
-          <div className="space-y-2">
-            <Label className="block text-left text-xs font-medium text-white/90 sm:text-sm">
-              Select Departure Airport
-            </Label>
-            <div className="flex h-11 items-center rounded-xl bg-white px-3 py-2 shadow-sm sm:h-12 sm:px-4 sm:py-3">
-              <Icon
-                icon="material-symbols:flight-takeoff"
-                className="mr-2 text-gray-400 sm:mr-3"
-                height={18}
-                width={18}
-              />
-              <Popover open={departureOpen} onOpenChange={setDepartureOpen}>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    role="combobox"
-                    aria-expanded={departureOpen}
-                    className="w-full justify-between border-none bg-transparent p-0 text-left text-xs font-medium text-gray-700 hover:bg-transparent focus:ring-0 focus:ring-offset-0 sm:text-sm"
-                  >
-                    {departureAirport
-                      ? searchResults.find(
-                          (airport) => airport.iata_code === departureAirport
-                        )?.airport_name
-                      : "Search airport..."}
-                    <ChevronsUpDown className="ml-2 h-3 w-3 shrink-0 opacity-50 sm:h-4 sm:w-4" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[280px] p-0 sm:w-[300px]">
-                  <Command>
-                    <CommandInput
-                      placeholder="Search airport..."
-                      onValueChange={setSearchQuery}
-                      className="border-none outline-none focus:ring-0"
-                    />
-                    <CommandList>
-                      <CommandEmpty>
-                        {searchLoading ? "Loading..." : "No airport found."}
-                      </CommandEmpty>
-                      <CommandGroup>
-                        {searchResults?.map((airport) => (
-                          <CommandItem
-                            key={airport.iata_code}
-                            value={airport.iata_code}
-                            onSelect={(currentValue) => {
-                              setDepartureAirport(
-                                currentValue === departureAirport
-                                  ? ""
-                                  : currentValue
-                              )
-                              setDepartureOpen(false)
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 h-4 w-4",
-                                departureAirport === airport.iata_code
-                                  ? "opacity-100"
-                                  : "opacity-0"
-                              )}
-                            />
-                            <span className="text-xs sm:text-sm">
-                              {airport.airport_name} ({airport.iata_code})
-                            </span>
-                          </CommandItem>
-                        ))}
-                      </CommandGroup>
-                    </CommandList>
-                  </Command>
-                </PopoverContent>
-              </Popover>
+            {/* Check Compensation Button */}
+            <div className="px-2 py-2">
+              <Button
+                className="h-12 rounded-xl bg-blue-600 px-6 font-semibold text-white transition-colors hover:bg-blue-700"
+                onClick={handleSubmit}
+              >
+                Check Compensation
+              </Button>
             </div>
           </div>
-
-          {/* Arrival Airport */}
-          <div className="space-y-2">
-            <Label className="block text-left text-xs font-medium text-white/90 sm:text-sm">
-              Select Arrival Airport
-            </Label>
-            <div className="flex h-11 items-center rounded-xl bg-white px-3 py-2 shadow-sm sm:h-12 sm:px-4 sm:py-3">
-              <Icon
-                icon="material-symbols:flight-land"
-                className="mr-2 text-gray-400 sm:mr-3"
-                height={18}
-                width={18}
-              />
-              <Popover open={arrivalOpen} onOpenChange={setArrivalOpen}>
-                <PopoverTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    role="combobox"
-                    aria-expanded={arrivalOpen}
-                    className="w-full justify-between border-none bg-transparent p-0 text-left text-xs font-medium text-gray-700 hover:bg-transparent focus:ring-0 focus:ring-offset-0 sm:text-sm"
-                  >
-                    {arrivalAirport
-                      ? searchResults.find(
-                          (airport) => airport.iata_code === arrivalAirport
-                        )?.airport_name
-                      : "Search airport..."}
-                    <ChevronsUpDown className="ml-2 h-3 w-3 shrink-0 opacity-50 sm:h-4 sm:w-4" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[280px] p-0 sm:w-[300px]">
-                  <Command>
-                    <CommandInput
-                      placeholder="Search airport..."
-                      onValueChange={setSearchQuery}
-                      className="border-none outline-none focus:ring-0"
-                    />
-                    <CommandList>
-                      <CommandEmpty>
-                        {searchLoading ? "Loading..." : "No airport found."}
-                      </CommandEmpty>
-                      <CommandGroup>
-                        {searchResults?.map((airport) => (
-                          <CommandItem
-                            key={airport.iata_code}
-                            value={airport.iata_code}
-                            onSelect={(currentValue) => {
-                              setArrivalAirport(
-                                currentValue === arrivalAirport
-                                  ? ""
-                                  : currentValue
-                              )
-                              setArrivalOpen(false)
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 h-4 w-4",
-                                arrivalAirport === airport.iata_code
-                                  ? "opacity-100"
-                                  : "opacity-0"
-                              )}
-                            />
-                            <span className="text-xs sm:text-sm">
-                              {airport.airport_name} ({airport.iata_code})
-                            </span>
-                          </CommandItem>
-                        ))}
-                      </CommandGroup>
-                    </CommandList>
-                  </Command>
-                </PopoverContent>
-              </Popover>
-            </div>
-          </div>
-
-          {/* Check Compensation Button */}
-          <div className="flex flex-col justify-end">
-            <Button
-              variant="primary"
-              size="lg"
-              className="h-11 w-full rounded-xl text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg sm:h-12 sm:text-base"
-              onClick={handleSubmit}
-            >
-              Check Compensation
-            </Button>
-          </div>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   )
 }

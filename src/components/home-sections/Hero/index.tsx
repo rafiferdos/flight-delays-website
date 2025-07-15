@@ -108,14 +108,14 @@ export default function Hero() {
           <div className="w-full max-w-4xl">
             <div className="rounded-xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-xl sm:rounded-2xl sm:p-6">
               {/* check compensation gradient text */}
-              <h3 className="mb-6 text-center text-2xl font-bold text-[#7fdaf2] sm:mb-8 sm:text-3xl md:text-4xl">
+              {/* <h3 className="mb-6 text-center text-2xl font-bold text-[#7fdaf2] sm:mb-8 sm:text-3xl md:text-4xl">
                 Check Compensation
-              </h3>
+              </h3> */}
               {/* Use Original Form Component for Functionality */}
               <CheckCompensationForm />
 
               {/* ------------------ Boarding Pass Option ---------------------- */}
-              <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-x-2">
+              {/* <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-x-2">
                 <span className="text-xs font-medium text-white/90 sm:text-sm">
                   OR FAST CHECK WITH
                 </span>
@@ -133,7 +133,7 @@ export default function Hero() {
                     Boarding pass
                   </span>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
 
