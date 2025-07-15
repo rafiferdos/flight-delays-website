@@ -19,21 +19,13 @@ export default function Home() {
   return (
     <div>
       <Hero />
-
       <Stats />
-
       <RulesAndRights />
-
       <WhyChooseUs />
-
       <AboutDistance />
-
       <CompensationGetProcess />
-
       <CompensationForFamily />
-
       <RecentSuccess />
-
       <FAQ />
     </div>
   )

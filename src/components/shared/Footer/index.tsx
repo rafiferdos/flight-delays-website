@@ -1,10 +1,10 @@
+import logo from "@/assets/logos/logo-mobile.svg"
+import ResponsiveContainer from "@/components/containers/ResponsiveContainer"
+import { NavbarLinks } from "@/constants/navbar.constants"
 import { socialIcons } from "@/utils/icons"
 import { Mail, MapPin, Phone } from "lucide-react"
-import Link from "next/link"
-import logo from "@/assets/logos/logo-mobile.svg"
 import Image from "next/image"
-import { NavbarLinks } from "@/constants/navbar.constants"
-import ResponsiveContainer from "@/components/containers/ResponsiveContainer"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -36,27 +36,14 @@ export default function Footer() {
                 </li>
               ))}
 
-              {[
-                {
-                  key: "terms-conditions",
-                  label: "Terms & Conditions",
-                  href: "/terms-conditions"
-                },
-                {
-                  key: "privacy-policy",
-                  label: "Privacy Policy",
-                  href: "/privacy-policy"
-                }
-              ].map((link) => (
-                <li key={link.key}>
-                  <Link
-                    href={link.href}
-                    className="font-light transition-colors hover:text-gray-300"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="font-light transition-colors hover:text-gray-300"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
