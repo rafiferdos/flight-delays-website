@@ -13,8 +13,8 @@ const Facilities = [
 
 export default function Hero() {
   return (
-    <section className="px-4 py-4 sm:px-8 md:px-16 lg:px-24">
-      <div className="relative grid min-h-[80dvh] place-items-center overflow-x-hidden sm:min-h-[85dvh] lg:min-h-[90dvh]">
+    <section className="px-4 py-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 2xl:px-48">
+      <div className="relative grid min-h-[80dvh] place-items-center overflow-x-hidden sm:min-h-[85dvh] lg:min-h-[85dvh]">
         {/* ------------------ Bg Image ---------------------- */}
         <Image
           src={heroBg}
@@ -27,7 +27,7 @@ export default function Hero() {
         />
         {/* --------------------------------------------------- */}
 
-        <ResponsiveContainer className="flex h-full flex-col items-center justify-center gap-y-6 py-6 text-center sm:gap-y-8 sm:py-8">
+        <ResponsiveContainer className="flex h-full flex-col items-center justify-center gap-y-6 py-6 text-center sm:gap-y-6 sm:py-8">
           {/* ------------------ Trustpilot Banner ---------------------- */}
           <div className="w-full max-w-4xl">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 sm:gap-x-3">

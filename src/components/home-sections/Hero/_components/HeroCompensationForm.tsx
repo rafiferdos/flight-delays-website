@@ -83,7 +83,6 @@ export default function HeroCompensationForm() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4">
-      {/* Glassy Form Container */}
       <div className="rounded-2xl p-2">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* Mobile Layout */}
