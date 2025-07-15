@@ -83,9 +83,9 @@ export default function HeroCompensationForm() {
 
               {/* Ticket perforation line */}
               <div className="relative bg-white/90 px-4 py-2">
-                <div className="border-t border-dashed border-gray-300"></div>
-                <div className="absolute top-1/2 -left-3 h-6 w-6 -translate-y-1/2 transform rounded-full bg-accent-foreground"></div>
-                <div className="absolute top-1/2 -right-3 h-6 w-6 -translate-y-1/2 transform rounded-full bg-accent-foreground"></div>
+                <div className="border-t border-dashed border-gray-400"></div>
+                <div className="absolute top-1/2 -left-3 h-6 w-6 -translate-y-1/2 transform rounded-full bg-black/90"></div>
+                <div className="absolute top-1/2 -right-3 h-6 w-6 -translate-y-1/2 transform rounded-full bg-slate-800"></div>
               </div>
 
               {/* Bottom section with button */}
