@@ -230,7 +230,6 @@ export default function CompensationStep3() {
           <UCheckbox
             name="acceptTerms"
             label="I accept the terms and conditions stated above"
-            
           />
         </div>
       </div>
