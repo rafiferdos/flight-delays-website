@@ -113,9 +113,13 @@ export const StatsData: IStat[] = [
 ]
 
 export const CompensationRules = [
-  "You could be eligible to claim up to £520 per passenger in compensation if your flight arrives three or more hours late, provided the delay was the airline's fault and not caused by an extraordinary circumstance.",
-  "Compensation may also be available if your flight was cancelled, you were involuntarily denied boarding, or you missed a connecting flight In certain situations, you may also be entitled to a flight refund.",
-  "Your right to claim is protected under EU Regulation 261, which has been adopted into UK law. These rights apply to any flight that was scheduled to depart within the last six years."
+  <>
+    <strong>You could claim up to £520 per passenger</strong> if your flight
+    arrived <strong>3+ hours late</strong>, provided the delay was <strong>the airline's fault</strong> (not due
+    to extraordinary circumstances like weather or strikes)
+  </>,
+  <><strong>Compensation may also be due if your flight was cancelled, you were Involuntarily denied boarding, or missed a connecting flight.</strong> In some cases, you could also be entitled to a <strong>full flight refund.</strong></>,
+  <> Your right to claim is <strong>protected under UK & EU Regulation 261</strong>, which has been carried into UK law. These rights apply to flights from up to <strong> 6 years ago.</strong>  </>
 ]
 
 export const CompensationRights = [
