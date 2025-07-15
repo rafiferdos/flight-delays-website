@@ -84,7 +84,7 @@ export default function HeroCompensationForm() {
   return (
     <div className="mx-auto w-full max-w-4xl">
       {/* Glassy Form Container */}
-      <div className="rounded-2xl border border-white/20 bg-white/10 p-6 shadow-lg backdrop-blur-sm">
+      <div className="rounded-2xl p-2 ">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* Unified White Container */}
           <div className="flex items-center overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
