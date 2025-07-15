@@ -246,41 +246,37 @@ export const CompensationProcessData: ICompensationProcess[] = [
   {
     key: "process-1",
     number: "01",
-    title: "Check eligibility",
-    subtitle: "You Submit Your Claim",
-    description: "Claim is settled and you receive your compensation."
+    title: "Check Eligibility",
+    subtitle: "Submit your claim",
+    description: "We make sure everything's quick and easy, and that your data's safe."
   },
   {
     key: "process-2",
     number: "02",
-    title: "Claim analysis",
-    subtitle: "Our Expert's Review",
-    description:
-      "Our specialists use advanced technology and airport data to validate your claim."
+    title: "Claim Analysis",
+    subtitle: "Our expert's review",
+    description: "Our specialists use advanced tech and flight data to validate your claim."
   },
   {
     key: "process-3",
     number: "03",
-    title: "We take action",
-    subtitle: "We Submit Your Claim",
-    description:
-      "We contact the airline on your behalf to officially initiate your claim."
+    title: "We Take Action",
+    subtitle: "We submit your claim",
+    description: "We handle the paperwork and contact the airline on your behalf."
   },
   {
     key: "process-4",
     number: "04",
-    title: "Handling all numbers",
-    subtitle: "Claim Process Management",
-    description:
-      "We manage all negotiation and communication with the airline to maximize your chances success."
+    title: "We Handle Everything",
+    subtitle: "We negotiate for you",
+    description: "Our team builds a strong case and pushes for maximum compensation."
   },
   {
     key: "process-5",
     number: "05",
-    title: "We take action",
-    subtitle: "We Submit Your Claim",
-    description:
-      "We contact the airline on your behalf to officially initiate your claim."
+    title: "You Get Paid",
+    subtitle: "You receive your compensation",
+    description: "Once approved, we transfer your money straight to your account."
   }
 ]
 
