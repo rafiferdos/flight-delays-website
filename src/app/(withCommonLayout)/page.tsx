@@ -12,7 +12,7 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Did you have a delayed or cancelled flight? Claim up to £520 compensation per passenger- No matter the ticket price! At Flight Delay Claims, we simplify the process taking the stress off your shoulders whilst ensuring your claim has the best chance of success."
+    "Claiming compensation is easier than you think. We handle everything and you get paid."
 }
 
 export default function Home() {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s - Flight Delays"
   },
   description:
-    "Claim up to £520 compensation per passenger- No matter the ticket price! At Flight Delay Claims, we simplify the process taking the stress off your shoulders whilst ensuring your claim has the best chance of success.",
+    "Claiming compensation is easier than you think. We handle everything and you get paid.",
   metadataBase: new URL((envConfig?.metadataBaseUrl as string) || "/"),
   alternates: {
     canonical: "/"

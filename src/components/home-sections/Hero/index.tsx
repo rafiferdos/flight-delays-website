@@ -1,6 +1,5 @@
 import heroBg from "@/assets/images/home/hero/hero-bg.png"
 import ResponsiveContainer from "@/components/containers/ResponsiveContainer"
-import { Button } from "@/components/ui/button"
 import { Icon } from "@iconify/react"
 import Image from "next/image"
 import CheckCompensationForm from "./_components/HeroCompensationForm"
@@ -85,7 +84,7 @@ export default function Hero() {
           </div>
 
           {/* ------------------ Main Content ---------------------- */}
-          <div className="w-full max-w-4xl text-white">
+          <div className="w-full max-w-3xl text-white">
             <h1 className="lg:text-h1 mb-3 text-2xl leading-tight font-bold sm:mb-4 sm:text-3xl md:text-4xl lg:leading-16 2xl:leading-20">
               Did you have a delayed or cancelled flight?
             </h1>
@@ -94,13 +93,12 @@ export default function Hero() {
               Get up to £520!
             </h2>
 
-            <p className="mx-auto mb-6 max-w-2xl px-2 text-sm font-medium text-white/90 sm:mb-8 sm:px-0 sm:text-base lg:text-lg">
-              Claim up to £520 compensation per passenger- No matter the ticket
-              price! At Flight Delay Claims, we{" "}
-              <span className="font-extrabold text-[#7fdaf2]">simplify</span>{" "}
-              the process taking the stress off your shoulders whilst ensuring
-              your claim has the best chance of{" "}
-              <span className="font-extrabold text-[#7fdaf2]">success</span>.
+            <p className="mx-auto mb-6 max-w-xl px-2 text-sm font-medium text-white/90 sm:mb-8 sm:px-0 sm:text-base lg:text-lg">
+            Claiming compensation is easier than you think. 
+            We handle {" "}
+              <span className="font-extrabold text-[#7fdaf2]">everything</span>{" "}
+              and you get{" "}
+              <span className="font-extrabold text-[#7fdaf2]">paid</span>.
             </p>
           </div>
 
