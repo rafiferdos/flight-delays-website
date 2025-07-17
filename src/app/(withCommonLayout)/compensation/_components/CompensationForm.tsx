@@ -335,10 +335,10 @@ export default function CompensationForm({
       >
         <div className="mb-4 border-b px-4 pb-2 md:px-6">
           <h4 className="text-h4 text-gradient font-semibold">
-            Claim Compensation
+          Had A Flight Delayed For More Than 3 hours?
           </h4>
           <p className="text-gray-600">
-            Please fill out the form to continue with your claim.
+          You may be eligible to claim up to £520 per passenger in compensation!
           </p>
         </div>
 
