@@ -27,7 +27,10 @@ export const StatsData: IStat[] = [
           className="size-12 sm:size-14 md:size-16 lg:size-18"
           color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
+        <div
+          className="absolute -top-1 -right-1 rounded-full p-1"
+          style={{ backgroundColor: "rgb(2, 171, 217)" }}
+        >
           <Icon
             icon="mdi:currency-gbp"
             className="size-3 text-white sm:size-4"
@@ -49,7 +52,10 @@ export const StatsData: IStat[] = [
           className="size-12 sm:size-14 md:size-16 lg:size-18"
           color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
+        <div
+          className="absolute -top-1 -right-1 rounded-full p-1"
+          style={{ backgroundColor: "rgb(2, 171, 217)" }}
+        >
           <Icon
             icon="mdi:emoticon-happy"
             className="size-3 text-white sm:size-4"
@@ -71,7 +77,10 @@ export const StatsData: IStat[] = [
           className="size-12 sm:size-14 md:size-16 lg:size-18"
           color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
+        <div
+          className="absolute -top-1 -right-1 rounded-full p-1"
+          style={{ backgroundColor: "rgb(2, 171, 217)" }}
+        >
           <Icon
             icon="mdi:check-circle"
             className="size-3 text-white sm:size-4"
@@ -93,7 +102,10 @@ export const StatsData: IStat[] = [
           className="size-12 sm:size-14 md:size-16 lg:size-18"
           color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
+        <div
+          className="absolute -top-1 -right-1 rounded-full p-1"
+          style={{ backgroundColor: "rgb(2, 171, 217)" }}
+        >
           <Icon
             icon="mdi:calendar-clock"
             className="size-3 text-white sm:size-4"
@@ -108,8 +120,8 @@ export const CompensationRules = [
   <>
     <strong>You could claim up to £520 per passenger</strong> if your flight
     arrived <strong>3+ hours late</strong>, provided the delay was{" "}
-    <strong>the airline&apos;s fault</strong> (not due to extraordinary
-    circumstances like weather)
+    <strong>the airline's fault</strong> (not due to extraordinary circumstances
+    like weather)
   </>,
   <>
     <strong>
@@ -255,13 +267,13 @@ export const CompensationProcessData: ICompensationProcess[] = [
     title: "Check Eligibility",
     subtitle: "Submit your claim",
     description:
-      "We make sure everything&apos;s quick and easy, and that your data&apos;s safe."
+      "We make sure everything's quick and easy, and that your data's safe."
   },
   {
     key: "process-2",
     number: "02",
     title: "Claim Analysis",
-    subtitle: "Our expert&apos;s review",
+    subtitle: "Our expert's review",
     description:
       "Our specialists use advanced tech and flight data to validate your claim."
   },
