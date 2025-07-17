@@ -55,7 +55,6 @@ export default function ThankYouContent() {
           </div>
         </div>
       </div>
-
     </div>
   )
 }
