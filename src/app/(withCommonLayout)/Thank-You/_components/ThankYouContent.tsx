@@ -34,8 +34,8 @@ export default function ThankYouContent() {
           <div className="flex items-start gap-3">
             <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-green-600" />
             <p className="text-lg text-gray-700">
-              <strong>We've received your claim</strong> and our Partner will
-              review the details.
+              <strong>We&apos;ve received your claim</strong> and our Partner
+              will review the details.
             </p>
           </div>
 

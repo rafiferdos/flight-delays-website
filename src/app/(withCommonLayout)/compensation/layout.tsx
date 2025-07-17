@@ -1,5 +1,4 @@
 import { Skeleton } from "@/components/ui/skeleton"
-import Image from "next/image"
 import { PropsWithChildren, Suspense } from "react"
 
 export default function CompensationLayout({ children }: PropsWithChildren) {
