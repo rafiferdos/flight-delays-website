@@ -21,12 +21,13 @@ export const StatsData: IStat[] = [
     label: "compensation claimed",
     icon: (
       <div className="relative">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-100 to-green-50 opacity-20"></div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#017292]/10 to-[#017292]/5 opacity-20"></div>
         <Icon
           icon="mdi:cash-multiple"
-          className="size-12 text-green-500 sm:size-14 md:size-16 lg:size-18"
+          className="size-12 sm:size-14 md:size-16 lg:size-18"
+          color="#017292"
         />
-        <div className="absolute -top-1 -right-1 rounded-full bg-green-500 p-1">
+        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "#017292" }}>
           <Icon
             icon="mdi:currency-gbp"
             className="size-3 text-white sm:size-4"
@@ -42,12 +43,13 @@ export const StatsData: IStat[] = [
     label: "happy passengers",
     icon: (
       <div className="relative">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 opacity-20"></div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[rgb(2,171,217)]/10 to-[rgb(2,171,217)]/5 opacity-20"></div>
         <Icon
           icon="mdi:account-group"
-          className="size-12 text-blue-500 sm:size-14 md:size-16 lg:size-18"
+          className="size-12 sm:size-14 md:size-16 lg:size-18"
+          color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full bg-yellow-400 p-1">
+        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
           <Icon
             icon="mdi:emoticon-happy"
             className="size-3 text-white sm:size-4"
@@ -63,12 +65,13 @@ export const StatsData: IStat[] = [
     label: "airline coverage",
     icon: (
       <div className="relative">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-100 to-sky-50 opacity-20"></div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#017292]/10 to-[#017292]/5 opacity-20"></div>
         <Icon
           icon="mdi:airplane"
-          className="size-12 text-sky-500 sm:size-14 md:size-16 lg:size-18"
+          className="size-12 sm:size-14 md:size-16 lg:size-18"
+          color="#017292"
         />
-        <div className="absolute -top-1 -right-1 rounded-full bg-sky-500 p-1">
+        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "#017292" }}>
           <Icon
             icon="mdi:check-circle"
             className="size-3 text-white sm:size-4"
@@ -84,12 +87,13 @@ export const StatsData: IStat[] = [
     label: "years in business",
     icon: (
       <div className="relative">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-100 to-purple-50 opacity-20"></div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[rgb(2,171,217)]/10 to-[rgb(2,171,217)]/5 opacity-20"></div>
         <Icon
           icon="mdi:office-building"
-          className="size-12 text-purple-500 sm:size-14 md:size-16 lg:size-18"
+          className="size-12 sm:size-14 md:size-16 lg:size-18"
+          color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full bg-purple-500 p-1">
+        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
           <Icon
             icon="mdi:calendar-clock"
             className="size-3 text-white sm:size-4"
