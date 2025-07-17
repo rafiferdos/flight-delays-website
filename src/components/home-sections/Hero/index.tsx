@@ -94,10 +94,7 @@ export default function Hero() {
             </h2>
 
             <p className="mx-auto mb-6 max-w-xl px-2 text-sm font-medium text-white/90 sm:mb-8 sm:px-0 sm:text-base lg:text-lg">
-              Claiming compensation is easier than you think. We handle{" "}
-              <span className="font-extrabold text-[#7fdaf2]">everything</span>{" "}
-              and you get{" "}
-              <span className="font-extrabold text-[#7fdaf2]">paid</span>.
+            Claiming compensation is easier than you think. We handle everything and you get paid.
             </p>
           </div>
 
