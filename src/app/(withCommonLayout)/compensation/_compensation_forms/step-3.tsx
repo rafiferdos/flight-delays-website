@@ -203,40 +203,38 @@ export default function CompensationStep3() {
       )}
 
       <div className="mt-6">
-        {/* Professional Terms Text - Italic and Smaller */}
+        {/* Professional Terms Text with Checkbox */}
         <div className="rounded-lg bg-gray-50 p-4 text-xs text-gray-600 italic">
-          <p className="mb-2">
-            By completing this form you consent to instruct our partner law firm
-            to present a claim to the airline on behalf of the passengers listed
-            above, which could include issuing proceedings. You understand that
-            they work on a no-win-no-fee basis, which means if they aren't
-            successful you won't have to pay anything. When they do recover
-            compensation from the airline they will deduct their fees. You
-            confirm your agreement to{" "}
-            <a
-              href="/terms-and-conditions.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-blue-600 underline hover:text-blue-800"
-            >
-              these terms and conditions
-            </a>{" "}
-            and you also agree to digitally sign{" "}
-            <a
-              href="/letter-of-claim.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-blue-600 underline hover:text-blue-800"
-            >
-              this letter of claim
-            </a>{" "}
-            which will be sent to the airline in your name.
-          </p>
-        </div>
-
-        {/* Accept Terms Checkbox */}
-        <div className="mt-4">
-          <UCheckbox name="acceptTerms" label="" />
+          <div className="flex items-start gap-3">
+            <UCheckbox name="acceptTerms" label="" className="mt-1" />
+            <p className="flex-1">
+              By completing this form you consent to instruct our partner law
+              firm to present a claim to the airline on behalf of the passengers
+              listed above, which could include issuing proceedings. You
+              understand that they work on a no-win-no-fee basis, which means if
+              they aren't successful you won't have to pay anything. When they
+              do recover compensation from the airline they will deduct their
+              fees. You confirm your agreement to{" "}
+              <a
+                href="/terms-and-conditions.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-blue-600 underline hover:text-blue-800"
+              >
+                these terms and conditions
+              </a>{" "}
+              and you also agree to digitally sign{" "}
+              <a
+                href="/letter-of-claim.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-blue-600 underline hover:text-blue-800"
+              >
+                this letter of claim
+              </a>{" "}
+              which will be sent to the airline in your name.
+            </p>
+          </div>
         </div>
       </div>
     </div>
