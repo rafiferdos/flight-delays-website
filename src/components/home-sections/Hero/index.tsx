@@ -147,12 +147,12 @@ export default function Hero() {
           </div>
 
           {/* ------------------ Facilities ---------------------- */}
-          <div className="xs:grid-cols-2 grid w-full max-w-4xl grid-cols-1 place-items-center gap-x-3 gap-y-3 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-4 lg:justify-between lg:gap-x-8">
+          <div className="grid w-full max-w-4xl grid-cols-2 place-items-center gap-x-0.5 gap-y-3 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-4 lg:justify-between lg:gap-x-8">
             {Facilities.map((facility, index) => (
               <div
                 key={facility.text}
                 className={`flex items-center gap-x-2 text-white ${
-                  index === 2 ? "xs:col-span-2 sm:col-span-1" : ""
+                  index === 2 ? "col-span-2 sm:col-span-1" : ""
                 }`}
               >
                 <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm sm:h-8 sm:w-8 lg:h-9 lg:w-9">
@@ -164,7 +164,7 @@ export default function Hero() {
                     className="sm:h-5 sm:w-5 lg:h-6 lg:w-6"
                   />
                 </div>
-                <span className="text-sm leading-snug font-medium sm:text-base sm:leading-normal lg:text-lg lg:leading-normal">
+                <span className="text-xs leading-snug font-medium sm:text-base sm:leading-normal lg:text-lg lg:leading-normal">
                   {facility.text}
                 </span>
               </div>
