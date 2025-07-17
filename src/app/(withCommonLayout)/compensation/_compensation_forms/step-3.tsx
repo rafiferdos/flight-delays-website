@@ -203,7 +203,7 @@ export default function CompensationStep3() {
         </div>
       )}
 
-      <div className="mt-6">
+      <div className="mt-1">
         {/* Professional Terms Text with Checkbox */}
         <div className="rounded-lg bg-gray-50 p-4 text-xs text-gray-600 italic">
           <div className="flex items-start gap-3">
