@@ -39,7 +39,7 @@ export default function Hero() {
         />
         {/* --------------------------------------------------- */}
 
-        <ResponsiveContainer className="flex h-full flex-col items-center justify-center gap-y-6 py-6 text-center sm:gap-y-6 sm:py-8">
+        <ResponsiveContainer className="flex h-full flex-col items-center justify-center gap-y-4 py-6 text-center sm:gap-y-6 sm:py-8 lg:gap-y-8">
           {/* ------------------ Trustpilot Banner ---------------------- */}
           <div className="w-full max-w-4xl">
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 sm:gap-x-3">
@@ -50,10 +50,10 @@ export default function Hero() {
                 width={18}
                 className="sm:h-5 sm:w-5"
               />
-              <span className="text-xs font-medium text-white sm:text-sm">
+              <span className="text-xs font-medium text-white sm:text-sm md:text-base">
                 Trustpilot
               </span>
-              <span className="text-xs font-semibold text-white sm:text-sm">
+              <span className="text-xs font-semibold text-white sm:text-sm md:text-base">
                 Excellent
               </span>
               <div className="flex gap-x-1">
@@ -96,16 +96,16 @@ export default function Hero() {
           </div>
 
           {/* ------------------ Main Content ---------------------- */}
-          <div className="w-full max-w-3xl text-white">
-            <h1 className="lg:text-h1 mb-3 text-2xl leading-tight font-bold sm:mb-4 sm:text-3xl md:text-4xl lg:leading-16 2xl:leading-20">
+          <div className="w-full max-w-4xl text-white">
+            <h1 className="mb-3 text-2xl leading-tight font-bold sm:mb-4 sm:text-3xl sm:leading-tight md:text-4xl md:leading-snug lg:text-5xl lg:leading-tight xl:text-6xl xl:leading-tight 2xl:text-7xl 2xl:leading-tight">
               Did you have a delayed or cancelled flight?
             </h1>
 
-            <h2 className="lg:text-h2 mb-4 text-xl font-bold text-[#7fdaf2] sm:mb-6 sm:text-2xl md:text-3xl">
+            <h2 className="mb-4 text-xl leading-tight font-bold text-[#7fdaf2] sm:mb-6 sm:text-2xl sm:leading-tight md:text-3xl md:leading-snug lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight">
               Get up to £520!
             </h2>
 
-            <p className="mx-auto mb-6 max-w-xl px-2 text-sm font-medium text-white/90 sm:mb-8 sm:px-0 sm:text-base lg:text-lg">
+            <p className="mx-auto mb-6 max-w-2xl px-2 text-sm leading-relaxed font-medium text-white/90 sm:mb-8 sm:px-0 sm:text-base sm:leading-relaxed md:text-lg md:leading-relaxed lg:text-xl lg:leading-relaxed">
               Claiming compensation is easier than you think. We handle{" "}
               <span className="font-extrabold text-[#7fdaf2]">everything</span>{" "}
               and you get{" "}
@@ -147,24 +147,24 @@ export default function Hero() {
           </div>
 
           {/* ------------------ Facilities ---------------------- */}
-          <div className="grid w-full max-w-4xl grid-cols-2 place-items-center gap-x-3 gap-y-4 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-4 lg:justify-between lg:gap-x-8">
+          <div className="xs:grid-cols-2 grid w-full max-w-4xl grid-cols-1 place-items-center gap-x-3 gap-y-3 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-4 lg:justify-between lg:gap-x-8">
             {Facilities.map((facility, index) => (
               <div
                 key={facility.text}
                 className={`flex items-center gap-x-2 text-white ${
-                  index === 2 ? "col-span-2 sm:col-span-1" : ""
+                  index === 2 ? "xs:col-span-2 sm:col-span-1" : ""
                 }`}
               >
-                <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm sm:h-8 sm:w-8">
+                <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm sm:h-8 sm:w-8 lg:h-9 lg:w-9">
                   <Icon
                     icon={facility.icon}
                     color={facility.iconColor}
-                    height={14}
-                    width={14}
-                    className="sm:h-5 sm:w-5"
+                    height={16}
+                    width={16}
+                    className="sm:h-5 sm:w-5 lg:h-6 lg:w-6"
                   />
                 </div>
-                <span className="text-xs leading-snug font-medium sm:text-base lg:text-lg">
+                <span className="text-sm leading-snug font-medium sm:text-base sm:leading-normal lg:text-lg lg:leading-normal">
                   {facility.text}
                 </span>
               </div>
