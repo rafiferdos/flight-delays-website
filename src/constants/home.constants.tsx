@@ -25,9 +25,9 @@ export const StatsData: IStat[] = [
         <Icon
           icon="mdi:cash-multiple"
           className="size-12 sm:size-14 md:size-16 lg:size-18"
-          color="#017292"
+          color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "#017292" }}>
+        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
           <Icon
             icon="mdi:currency-gbp"
             className="size-3 text-white sm:size-4"
@@ -69,9 +69,9 @@ export const StatsData: IStat[] = [
         <Icon
           icon="mdi:airplane"
           className="size-12 sm:size-14 md:size-16 lg:size-18"
-          color="#017292"
+          color="rgb(2, 171, 217)"
         />
-        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "#017292" }}>
+        <div className="absolute -top-1 -right-1 rounded-full p-1" style={{ backgroundColor: "rgb(2, 171, 217)" }}>
           <Icon
             icon="mdi:check-circle"
             className="size-3 text-white sm:size-4"
