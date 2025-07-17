@@ -3,34 +3,34 @@ import { StatsData } from "@/constants/home.constants"
 
 export default function Stats() {
   return (
-    <ResponsiveContainer className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-2">
-      {StatsData?.map((stat) => (
-        <div
-          key={stat.key}
-          style={{
-            borderRadius: "16px",
-            background: "#FFF",
-            boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.05)",
-            padding: "28px",
-            position: "relative",
-            zIndex: 20
-          }}
-          className="text-center lg:text-left"
-        >
-          <span className="md:text-h4 text-h5 lg:text-h3 text-gradient text-center font-semibold">
-            {stat.stat}
-            {stat.valueText}
-          </span>
+    <ResponsiveContainer className="mt-10">
+      <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+        {StatsData?.map((stat) => (
+          <div
+            key={stat.key}
+            style={{
+              borderRadius: "16px",
+              background: "#FFF",
+              boxShadow: "0px 0px 20px 0px rgba(0, 0, 0, 0.05)",
+              padding: "20px",
+              position: "relative",
+              zIndex: 20
+            }}
+            className="text-center"
+          >
+            <div className="mb-4 flex justify-center">{stat.icon}</div>
 
-          <p className="mt-0.5 text-xs font-normal text-gray-500 md:text-sm lg:text-base">
-            {stat.label}
-          </p>
+            <div className="text-gradient text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl">
+              {stat.stat}
+              {stat.valueText}
+            </div>
 
-          <span className="absolute right-0 bottom-3 -z-10 lg:right-4">
-            {stat.icon}
-          </span>
-        </div>
-      ))}
+            <p className="mt-2 text-xs font-medium text-gray-600 sm:text-sm lg:text-base">
+              {stat.label}
+            </p>
+          </div>
+        ))}
+      </div>
     </ResponsiveContainer>
   )
 }

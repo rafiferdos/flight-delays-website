@@ -21,17 +21,38 @@ export const StatsData: IStat[] = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 106 106"
+        viewBox="0 0 120 120"
         fill="none"
-        className="size-[80px] lg:size-[106px]"
+        className="size-[80px] lg:size-[120px]"
       >
-        <circle cx="53" cy="53" r="43" stroke="#F5FDFF" strokeWidth="20" />
+        <circle
+          cx="60"
+          cy="60"
+          r="50"
+          fill="#E8F8FF"
+          stroke="#02ABD9"
+          strokeWidth="4"
+        />
+        <path
+          d="M45 35h10c8.284 0 15 6.716 15 15v5c0 8.284-6.716 15-15 15h-5v10h15"
+          stroke="#02ABD9"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        <path
+          d="M55 30v10M55 80v10"
+          stroke="#02ABD9"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
         <text
-          x="53"
-          y="60"
+          x="60"
+          y="90"
           textAnchor="middle"
-          fill="#F5FDFF"
-          fontSize="24"
+          fill="#02ABD9"
+          fontSize="14"
           fontWeight="bold"
         >
           £
@@ -43,18 +64,39 @@ export const StatsData: IStat[] = [
     key: "peopleCompensated",
     stat: "700,000", // Ensure this is a string
     valueText: "+",
-    label: "passengers helped",
+    label: "happy passengers",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 125 74"
+        viewBox="0 0 120 120"
         fill="none"
-        className="size-[90px] lg:size-[125px]"
+        className="size-[80px] lg:size-[120px]"
       >
+        <circle
+          cx="60"
+          cy="60"
+          r="50"
+          fill="#E8F8FF"
+          stroke="#02ABD9"
+          strokeWidth="4"
+        />
+        <circle cx="60" cy="45" r="15" fill="#02ABD9" />
         <path
-          d="M34.0593 58.6H1V73H105.04V57.16H71.0079L124 26.44L105.04 2.44L59.8261 55.24L88.0237 1H54.4783L44.7549 55.24V1L13.1542 13.96L34.0593 58.6Z"
-          fill="#F5FDFF"
-          stroke="white"
+          d="M30 90c0-16.569 13.431-30 30-30s30 13.431 30 30"
+          fill="#02ABD9"
+        />
+        <path
+          d="M45 42c-1.5-2-1.5-2-1.5-2M75 42c1.5-2 1.5-2 1.5-2"
+          stroke="#FFF"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M55 50c2.5 2 2.5 2 2.5 2s0 0 2.5-2"
+          stroke="#FFF"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     )
@@ -63,50 +105,95 @@ export const StatsData: IStat[] = [
     key: "ensurity",
     stat: "100", // Ensure this is a string
     valueText: "%",
-    label: "of airlines",
+    label: "airline coverage",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 118 118"
+        viewBox="0 0 120 120"
         fill="none"
-        className="size-[90px] lg:size-[118px]"
+        className="size-[80px] lg:size-[120px]"
       >
+        <circle
+          cx="60"
+          cy="60"
+          r="50"
+          fill="#E8F8FF"
+          stroke="#02ABD9"
+          strokeWidth="4"
+        />
         <path
-          d="M71.0942 46.7192C76.263 51.8993 82.3633 56.0182 89.0502 58.8722C82.3633 61.7262 76.263 65.8452 71.0942 71.0253C65.9422 76.1884 61.8444 82.2765 59 88.9468C56.1556 82.2765 52.0578 76.1884 46.9058 71.0253C41.737 65.8452 35.6367 61.7262 28.9498 58.8722C35.6367 56.0182 41.737 51.8993 46.9058 46.7192C52.0578 41.5561 56.1556 35.4679 59 28.7976C61.8444 35.4679 65.9422 41.5561 71.0942 46.7192L78.6448 39.1849L71.0942 46.7192Z"
-          fill="white"
-          stroke="#F5FDFF"
-          strokeWidth="21.3333"
+          d="M30 60L45 45L60 60L90 30"
+          stroke="#02ABD9"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        <path
+          d="M25 75L35 65L45 75L65 55"
+          stroke="#02ABD9"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        <path
+          d="M55 85L65 75L75 85L95 65"
+          stroke="#02ABD9"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
         />
       </svg>
     )
   },
   {
     key: "experience",
-    stat: "7", // Ensure this is a string
+    stat: "12", // Changed from "7" to "12"
     valueText: "+",
     label: "years in business",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 91 91"
+        viewBox="0 0 120 120"
         fill="none"
-        className="size-[80px] lg:size-[91px]"
+        className="size-[80px] lg:size-[120px]"
       >
         <circle
-          cx="45.5"
-          cy="45.5"
-          r="40"
-          stroke="#F5FDFF"
-          strokeWidth="8"
+          cx="60"
+          cy="60"
+          r="50"
+          fill="#E8F8FF"
+          stroke="#02ABD9"
+          strokeWidth="4"
+        />
+        <circle
+          cx="60"
+          cy="60"
+          r="35"
+          stroke="#02ABD9"
+          strokeWidth="3"
           fill="none"
         />
         <path
-          d="M45.5 15V45.5L65 65"
-          stroke="#F5FDFF"
-          strokeWidth="6"
+          d="M60 35V60L75 75"
+          stroke="#02ABD9"
+          strokeWidth="4"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+        <circle cx="60" cy="60" r="3" fill="#02ABD9" />
+        <text
+          x="60"
+          y="95"
+          textAnchor="middle"
+          fill="#02ABD9"
+          fontSize="12"
+          fontWeight="bold"
+        >
+          12
+        </text>
       </svg>
     )
   }
