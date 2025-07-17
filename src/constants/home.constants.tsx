@@ -2,6 +2,7 @@ import caFlag from "@/assets/images/home/claim-compensation/ca.png"
 import euFlag from "@/assets/images/home/claim-compensation/eu.png"
 import trFlag from "@/assets/images/home/claim-compensation/tk.png"
 import ukFlag from "@/assets/images/home/claim-compensation/uk.png"
+import { Icon } from "@iconify/react"
 import { JSX, ReactNode } from "react"
 
 interface IStat {
@@ -15,186 +16,86 @@ interface IStat {
 export const StatsData: IStat[] = [
   {
     key: "compensationClaimed",
-    stat: "£82m", // Ensure this is a string
+    stat: "£82m",
     valueText: "+",
     label: "compensation claimed",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 120 120"
-        fill="none"
-        className="size-[80px] lg:size-[120px]"
-      >
-        <circle
-          cx="60"
-          cy="60"
-          r="50"
-          fill="#E8F8FF"
-          stroke="#02ABD9"
-          strokeWidth="4"
+      <div className="relative">
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-100 to-green-50 opacity-20"></div>
+        <Icon
+          icon="mdi:cash-multiple"
+          className="size-12 text-green-500 sm:size-14 md:size-16 lg:size-18"
         />
-        <path
-          d="M45 35h10c8.284 0 15 6.716 15 15v5c0 8.284-6.716 15-15 15h-5v10h15"
-          stroke="#02ABD9"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-        <path
-          d="M55 30v10M55 80v10"
-          stroke="#02ABD9"
-          strokeWidth="4"
-          strokeLinecap="round"
-        />
-        <text
-          x="60"
-          y="90"
-          textAnchor="middle"
-          fill="#02ABD9"
-          fontSize="14"
-          fontWeight="bold"
-        >
-          £
-        </text>
-      </svg>
+        <div className="absolute -top-1 -right-1 rounded-full bg-green-500 p-1">
+          <Icon
+            icon="mdi:currency-gbp"
+            className="size-3 text-white sm:size-4"
+          />
+        </div>
+      </div>
     )
   },
   {
     key: "peopleCompensated",
-    stat: "700,000", // Ensure this is a string
+    stat: "700,000",
     valueText: "+",
     label: "happy passengers",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 120 120"
-        fill="none"
-        className="size-[80px] lg:size-[120px]"
-      >
-        <circle
-          cx="60"
-          cy="60"
-          r="50"
-          fill="#E8F8FF"
-          stroke="#02ABD9"
-          strokeWidth="4"
+      <div className="relative">
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 opacity-20"></div>
+        <Icon
+          icon="mdi:account-group"
+          className="size-12 text-blue-500 sm:size-14 md:size-16 lg:size-18"
         />
-        <circle cx="60" cy="45" r="15" fill="#02ABD9" />
-        <path
-          d="M30 90c0-16.569 13.431-30 30-30s30 13.431 30 30"
-          fill="#02ABD9"
-        />
-        <path
-          d="M45 42c-1.5-2-1.5-2-1.5-2M75 42c1.5-2 1.5-2 1.5-2"
-          stroke="#FFF"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M55 50c2.5 2 2.5 2 2.5 2s0 0 2.5-2"
-          stroke="#FFF"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+        <div className="absolute -top-1 -right-1 rounded-full bg-yellow-400 p-1">
+          <Icon
+            icon="mdi:emoticon-happy"
+            className="size-3 text-white sm:size-4"
+          />
+        </div>
+      </div>
     )
   },
   {
     key: "ensurity",
-    stat: "100", // Ensure this is a string
+    stat: "100",
     valueText: "%",
     label: "airline coverage",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 120 120"
-        fill="none"
-        className="size-[80px] lg:size-[120px]"
-      >
-        <circle
-          cx="60"
-          cy="60"
-          r="50"
-          fill="#E8F8FF"
-          stroke="#02ABD9"
-          strokeWidth="4"
+      <div className="relative">
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-100 to-sky-50 opacity-20"></div>
+        <Icon
+          icon="mdi:airplane"
+          className="size-12 text-sky-500 sm:size-14 md:size-16 lg:size-18"
         />
-        <path
-          d="M30 60L45 45L60 60L90 30"
-          stroke="#02ABD9"
-          strokeWidth="6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-        <path
-          d="M25 75L35 65L45 75L65 55"
-          stroke="#02ABD9"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-        <path
-          d="M55 85L65 75L75 85L95 65"
-          stroke="#02ABD9"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="none"
-        />
-      </svg>
+        <div className="absolute -top-1 -right-1 rounded-full bg-sky-500 p-1">
+          <Icon
+            icon="mdi:check-circle"
+            className="size-3 text-white sm:size-4"
+          />
+        </div>
+      </div>
     )
   },
   {
     key: "experience",
-    stat: "12", // Changed from "7" to "12"
+    stat: "12",
     valueText: "+",
     label: "years in business",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 120 120"
-        fill="none"
-        className="size-[80px] lg:size-[120px]"
-      >
-        <circle
-          cx="60"
-          cy="60"
-          r="50"
-          fill="#E8F8FF"
-          stroke="#02ABD9"
-          strokeWidth="4"
+      <div className="relative">
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-100 to-purple-50 opacity-20"></div>
+        <Icon
+          icon="mdi:office-building"
+          className="size-12 text-purple-500 sm:size-14 md:size-16 lg:size-18"
         />
-        <circle
-          cx="60"
-          cy="60"
-          r="35"
-          stroke="#02ABD9"
-          strokeWidth="3"
-          fill="none"
-        />
-        <path
-          d="M60 35V60L75 75"
-          stroke="#02ABD9"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx="60" cy="60" r="3" fill="#02ABD9" />
-        <text
-          x="60"
-          y="95"
-          textAnchor="middle"
-          fill="#02ABD9"
-          fontSize="12"
-          fontWeight="bold"
-        >
-          12
-        </text>
-      </svg>
+        <div className="absolute -top-1 -right-1 rounded-full bg-purple-500 p-1">
+          <Icon
+            icon="mdi:calendar-clock"
+            className="size-3 text-white sm:size-4"
+          />
+        </div>
+      </div>
     )
   }
 ]
@@ -432,7 +333,7 @@ export const FaqData: IFaq[] = [
     key: "faq-1",
     question: "How do I know if i'm eligible for compensation?",
     answer:
-      "You may be eligible for compensation if your flight was delayed by three hours or more and the cause was within the airline’s control."
+      "You may be eligible for compensation if your flight was delayed by three hours or more and the cause was within the airline's control."
   },
   {
     key: "faq-2",
