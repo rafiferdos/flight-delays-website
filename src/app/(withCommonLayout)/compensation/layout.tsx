@@ -35,7 +35,7 @@ export default function CompensationLayout({ children }: PropsWithChildren) {
         </div>
 
         {/* Professional Trust Badges */}
-        <div className="flex items-center justify-center gap-6 py-4">
+        {/* <div className="flex items-center justify-center gap-6 py-4">
           <div className="flex flex-col items-center gap-2">
             <Image
               src="/compensation-images/GDPR-badge.png"
@@ -61,7 +61,7 @@ export default function CompensationLayout({ children }: PropsWithChildren) {
               SSL Secured
             </span>
           </div>
-        </div>
+        </div> */}
 
         {/* Trust Message */}
         <div className="text-center text-sm text-gray-500">
