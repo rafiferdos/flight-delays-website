@@ -73,8 +73,9 @@ export default function CompensationStep3() {
           </div>
           <div className="ml-3">
             <p className="text-sm font-medium text-green-800">
-              <span className="font-semibold">Good news!</span> We can help you.
-              We just need a few more details…
+              <span className="font-semibold">Good news!</span> Based on the
+              information you have provided it looks like you may be eligible
+              for compensation.
             </p>
           </div>
         </div>
