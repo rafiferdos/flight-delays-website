@@ -2,24 +2,26 @@
 
 import {
   CommandGroup,
+  CommandInput,
   CommandItem,
-  CommandList,
-  CommandInput
+  CommandList
 } from "@/components/ui/command"
-import { Command as CommandPrimitive } from "cmdk"
-import {
-  useState,
-  useRef,
-  useCallback,
-  type KeyboardEvent,
-  Dispatch,
-  SetStateAction,
-  ReactNode
-} from "react"
-import { Skeleton } from "./skeleton"
-import { Check, Info } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Icon } from "@iconify/react"
+import { Command as CommandPrimitive } from "cmdk"
+import { Check, Info } from "lucide-react"
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent
+} from "react"
+import { createPortal } from "react-dom"
+import { Skeleton } from "./skeleton"
 
 export type AutoCompleteOption = Record<"value" | "label", string> &
   Record<string, string>
@@ -56,12 +58,30 @@ export const AutoComplete = ({
   searchTooltipText
 }: AutoCompleteProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const [dropdownPosition, setDropdownPosition] = useState({
+    top: 0,
+    left: 0,
+    width: 0
+  })
 
   const [isOpen, setOpen] = useState(false)
   const [selected, setSelected] = useState<AutoCompleteOption>(
     value as AutoCompleteOption
   )
   const [inputValue, setInputValue] = useState<string>(value?.label || "")
+
+  // Calculate dropdown position
+  useEffect(() => {
+    if (isOpen && wrapperRef.current) {
+      const rect = wrapperRef.current.getBoundingClientRect()
+      setDropdownPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+        width: rect.width
+      })
+    }
+  }, [isOpen])
 
   const handleKeyDown = useCallback(
     (event: KeyboardEvent<HTMLDivElement>) => {
@@ -99,28 +119,28 @@ export const AutoComplete = ({
   )
 
   const handleBlur = useCallback(() => {
-    if (!inputValue) {
-      setSelected({} as AutoCompleteOption)
-    }
-    setInputValue(selected?.label)
-    setOpen(false)
+    // Add a small delay to allow option selection before closing
+    setTimeout(() => {
+      if (!inputValue) {
+        setSelected({} as AutoCompleteOption)
+      }
+      setInputValue(selected?.label || "")
+      setOpen(false)
+    }, 150)
   }, [selected, inputValue])
 
   const handleSelectOption = useCallback(
     (selectedOption: AutoCompleteOption) => {
       if (selectedOption?.value === selected?.value) {
         setInputValue("")
-
         setSelected({} as AutoCompleteOption)
         onValueChange?.(undefined)
       } else {
         setInputValue(selectedOption.label)
-
         setSelected(selectedOption)
         onValueChange?.(selectedOption)
 
         // This is a hack to prevent the input from being focused after the user selects an option
-        // We can call this hack: "The next tick"
         setTimeout(() => {
           inputRef?.current?.blur()
         }, 0)
@@ -135,11 +155,80 @@ export const AutoComplete = ({
     onValueChange?.(undefined)
   }, [onValueChange])
 
+  const DropdownContent = () => (
+    <div
+      className="absolute rounded-lg border border-gray-200 bg-white shadow-2xl"
+      style={{
+        top: `${dropdownPosition.top}px`,
+        left: `${dropdownPosition.left}px`,
+        width: `${dropdownPosition.width}px`,
+        zIndex: 10000
+      }}
+    >
+      <CommandList className="scrollbar-thin scrollbar-w-2 scrollbar-track-white scrollbar-thumb-secondary scrollbar-thumb-rounded-full max-h-60 overflow-y-auto rounded-lg">
+        {isLoading === true ? (
+          <CommandPrimitive.Loading>
+            <div className="space-y-2 p-2">
+              {Array.from({ length: 10 }).map((_, index) => (
+                <Skeleton key={index} className="h-8 w-full" />
+              ))}
+            </div>
+          </CommandPrimitive.Loading>
+        ) : null}
+        {options?.length > 0 && !isLoading ? (
+          <CommandGroup>
+            {options?.map((option) => {
+              const isSelected = selected?.value === option.value
+              return (
+                <CommandItem
+                  key={option.value}
+                  value={option.label}
+                  onMouseDown={(event) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }}
+                  onSelect={() => handleSelectOption(option)}
+                  className={cn(
+                    "flex w-full cursor-pointer items-center gap-2 px-4 py-2 text-sm font-medium hover:bg-gray-50 data-[selected=true]:bg-gray-100",
+                    !isSelected ? "pl-8" : null
+                  )}
+                >
+                  {isSelected ? <Check className="w-4" /> : null}
+                  {option.label}
+                </CommandItem>
+              )
+            })}
+          </CommandGroup>
+        ) : null}
+
+        {!isLoading ? (
+          <CommandPrimitive.Empty className="rounded-sm px-4 py-5 text-center text-sm select-none">
+            {!inputValue ? (
+              <p className="flex items-center justify-center font-medium text-gray-600">
+                <Info className="mr-2 h-5 w-5 text-blue-500" />
+                {searchTooltipText}
+              </p>
+            ) : inputValue && inputValue?.length < 3 ? (
+              <p className="flex items-center justify-center font-medium text-gray-600">
+                <Info className="mr-2 h-5 w-5 text-blue-500" />
+                Enter at least 3 characters to search
+              </p>
+            ) : (
+              <p className="text-destructive font-medium">{emptyMessage}</p>
+            )}
+          </CommandPrimitive.Empty>
+        ) : null}
+      </CommandList>
+    </div>
+  )
+
   return (
     <CommandPrimitive onInput={handleKeyDown}>
-      <div className="relative">
+      <div className="relative w-full" ref={wrapperRef}>
         {icon && (
-          <div className="absolute top-1/2 left-3 -translate-y-1/2">{icon}</div>
+          <div className="absolute top-1/2 left-3 z-10 -translate-y-1/2">
+            {icon}
+          </div>
         )}
 
         <CommandInput
@@ -153,9 +242,9 @@ export const AutoComplete = ({
           }}
           placeholder={placeholder}
           disabled={disabled}
-          className="text-sm"
+          className="w-full text-sm"
           wrapperClassName={cn(
-            "border-[2px] border-secondary py-[22px] rounded-lg focus-within:ring-[2px] focus-within:ring-secondary/50 transition-all ease-in",
+            "border-0 border-transparent bg-transparent focus-within:ring-0 focus-within:ring-transparent focus-within:border-transparent outline-none shadow-none w-full",
             icon ? "pl-10" : "",
             isAriaInvalid && "border-destructive"
           )}
@@ -164,7 +253,7 @@ export const AutoComplete = ({
 
         {selected?.label && (
           <button
-            className="animate-in fade-in-50 absolute top-1/2 right-3.5 -translate-y-1/2"
+            className="animate-in fade-in-50 absolute top-1/2 right-3.5 z-10 -translate-y-1/2"
             onClick={handleClearSelection}
           >
             <Icon
@@ -176,68 +265,11 @@ export const AutoComplete = ({
           </button>
         )}
       </div>
-      <div className="relative mt-1">
-        {isOpen && (
-          <div className="absolute top-[2px] z-10 w-full rounded-lg border bg-white outline-none">
-            <CommandList className="scrollbar-thin scrollbar-w-2 scrollbar-track-white scrollbar-thumb-secondary scrollbar-thumb-rounded-full rounded-lg">
-              {isLoading === true ? (
-                <CommandPrimitive.Loading>
-                  <div className="space-y-2 p-2">
-                    {Array.from({ length: 10 }).map((_, index) => (
-                      <Skeleton key={index} className="h-8 w-full" />
-                    ))}
-                  </div>
-                </CommandPrimitive.Loading>
-              ) : null}
-              {options?.length > 0 && !isLoading ? (
-                <CommandGroup>
-                  {options?.map((option) => {
-                    const isSelected = selected?.value === option.value
-                    return (
-                      <CommandItem
-                        key={option.value}
-                        value={option.label}
-                        onMouseDown={(event) => {
-                          event.preventDefault()
-                          event.stopPropagation()
-                        }}
-                        onSelect={() => handleSelectOption(option)}
-                        className={cn(
-                          "data-[selected=true]:bg-secondary/10 flex w-full items-center gap-2 text-sm font-medium",
-                          !isSelected ? "pl-8" : null
-                        )}
-                      >
-                        {isSelected ? <Check className="w-4" /> : null}
-                        {option.label}
-                      </CommandItem>
-                    )
-                  })}
-                </CommandGroup>
-              ) : null}
 
-              {!isLoading ? (
-                <CommandPrimitive.Empty className="rounded-sm px-2 py-5 text-center text-sm select-none">
-                  {!inputValue ? (
-                    <p className="flex items-center justify-center font-medium text-gray-600">
-                      <Info className="mr-2 h-5 w-5 text-blue-500" />
-                      {searchTooltipText}
-                    </p>
-                  ) : inputValue && inputValue?.length < 3 ? (
-                    <p className="flex items-center justify-center font-medium text-gray-600">
-                      <Info className="mr-2 h-5 w-5 text-blue-500" />
-                      Enter at least 3 characters to search
-                    </p>
-                  ) : (
-                    <p className="text-destructive font-medium">
-                      {emptyMessage}
-                    </p>
-                  )}
-                </CommandPrimitive.Empty>
-              ) : null}
-            </CommandList>
-          </div>
-        )}
-      </div>
+      {/* Render dropdown using portal to avoid clipping */}
+      {isOpen &&
+        typeof document !== "undefined" &&
+        createPortal(<DropdownContent />, document.body)}
     </CommandPrimitive>
   )
 }

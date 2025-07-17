@@ -1,10 +1,13 @@
 "use client"
 
+import { AutoComplete, AutoCompleteOption } from "@/components/ui/autocomplete"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import envConfig from "@/config/envConfig"
+import useDebounce from "@/hooks/useDebounce"
 import { Icon } from "@iconify/react/dist/iconify.js"
 import { useRouter } from "nextjs-toploader/app"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { toast } from "sonner"
 
 export interface IAirportSearchResult {
   airport_id: string
@@ -24,15 +27,63 @@ export interface IAirportSearchResult {
 }
 
 export default function HeroCompensationForm() {
-  const [departureAirport, setDepartureAirport] = useState<string>("")
-  const [arrivalAirport, setArrivalAirport] = useState<string>("")
+  const [departureAirport, setDepartureAirport] = useState<
+    AutoCompleteOption | undefined
+  >(undefined)
+  const [arrivalAirport, setArrivalAirport] = useState<
+    AutoCompleteOption | undefined
+  >(undefined)
 
+  // Search States
   const router = useRouter()
+  const [searchLoading, setSearchLoading] = useState<boolean>(false)
+  const [searchQuery, setSearchQuery] = useState<string>("")
+  const [searchResults, setSearchResults] = useState<IAirportSearchResult[]>([])
+
+  const debouncedSearchQuery = useDebounce(searchQuery, 500)
+
+  // Get search results based on debounced search query
+  useEffect(() => {
+    const fetchResults = async () => {
+      if (debouncedSearchQuery?.length < 3) {
+        return
+      }
+
+      const apiKey = envConfig.apiKey
+
+      if (!apiKey) {
+        toast.error("Server is experiencing issues. Please try again later.")
+        return
+      }
+
+      setSearchLoading(true)
+      try {
+        const res = await fetch(
+          envConfig.apiBaseUrl +
+            `/airports?access_key=${apiKey}&search=${debouncedSearchQuery}&limit=9999999`
+        )
+        const data = await res.json()
+
+        setSearchResults(data?.data)
+      } catch (error) {
+        console.error("Fetch error:", error)
+        setSearchResults([])
+      } finally {
+        setSearchLoading(false)
+      }
+    }
+
+    if (debouncedSearchQuery.trim()) {
+      fetchResults()
+    }
+  }, [debouncedSearchQuery])
 
   const handleSubmit = () => {
+    // Set arrival and departure airport value in search params for
+    // retrieving compensation details from compensation form page
     router.push(
       "/compensation" +
-        `?departureAirport=${departureAirport}&arrivalAirport=${arrivalAirport}`
+        `?departureAirport=${departureAirport?.label || ""}&arrivalAirport=${arrivalAirport?.label || ""}`
     )
   }
 
@@ -45,38 +96,68 @@ export default function HeroCompensationForm() {
           <div className="block sm:hidden">
             <div className="overflow-hidden rounded-2xl shadow-lg backdrop-blur-sm">
               {/* Top section with inputs */}
-              <div className="bg-white/90 p-4 space-y-2">
+              <div className="space-y-2 bg-white/90 p-4">
                 {/* Departure Airport */}
-                <div className="flex items-center border-b border-gray-200 px-4 py-4 bg-white/90 rounded-xl">
-                  <Icon
-                    icon="material-symbols:flight-takeoff"
-                    className="mr-3 text-gray-400"
-                    height={20}
-                    width={20}
-                  />
-                  <Input
-                    type="text"
+                <div className="flex items-center rounded-xl border-b border-gray-200 bg-white/90 px-4 py-4">
+                  <AutoComplete
+                    options={
+                      searchResults?.length > 0
+                        ? searchResults?.map((result) => ({
+                            label: `${result?.airport_name} (${result?.iata_code})`,
+                            value: result.iata_code,
+                            searchText: result.airport_name
+                          }))
+                        : []
+                    }
+                    emptyMessage="No results."
                     placeholder="Departure airport"
+                    onValueChange={setDepartureAirport}
                     value={departureAirport}
-                    onChange={(e) => setDepartureAirport(e.target.value)}
-                    className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    onChange={(searchInput) => {
+                      setSearchQuery(searchInput)
+                    }}
+                    isLoading={searchLoading}
+                    icon={
+                      <Icon
+                        icon="material-symbols:flight-takeoff"
+                        className="text-gray-400"
+                        height={20}
+                        width={20}
+                      />
+                    }
+                    searchTooltipText="Search by airport name, not by city"
                   />
                 </div>
 
                 {/* Arrival Airport */}
-                <div className="flex items-center px-4 py-4 bg-white/90 rounded-xl">
-                  <Icon
-                    icon="material-symbols:flight-land"
-                    className="mr-3 text-gray-400"
-                    height={20}
-                    width={20}
-                  />
-                  <Input
-                    type="text"
+                <div className="flex items-center rounded-xl bg-white/90 px-4 py-4">
+                  <AutoComplete
+                    options={
+                      searchResults?.length > 0
+                        ? searchResults?.map((result) => ({
+                            label: `${result?.airport_name} (${result?.iata_code})`,
+                            value: result.iata_code,
+                            searchText: result.airport_name
+                          }))
+                        : []
+                    }
+                    emptyMessage="No results."
                     placeholder="Final destination airport"
+                    onValueChange={setArrivalAirport}
                     value={arrivalAirport}
-                    onChange={(e) => setArrivalAirport(e.target.value)}
-                    className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    onChange={(searchInput) => {
+                      setSearchQuery(searchInput)
+                    }}
+                    isLoading={searchLoading}
+                    icon={
+                      <Icon
+                        icon="material-symbols:flight-land"
+                        className="text-gray-400"
+                        height={20}
+                        width={20}
+                      />
+                    }
+                    searchTooltipText="Search by airport name, not by city"
                   />
                 </div>
               </div>
@@ -105,35 +186,65 @@ export default function HeroCompensationForm() {
             <div className="flex items-center overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
               {/* Departure Airport */}
               <div className="flex flex-1 items-center border-r border-gray-200 px-4 py-4">
-                <Icon
-                  icon="material-symbols:flight-takeoff"
-                  className="mr-3 text-gray-400"
-                  height={20}
-                  width={20}
-                />
-                <Input
-                  type="text"
+                <AutoComplete
+                  options={
+                    searchResults?.length > 0
+                      ? searchResults?.map((result) => ({
+                          label: `${result?.airport_name} (${result?.iata_code})`,
+                          value: result.iata_code,
+                          searchText: result.airport_name
+                        }))
+                      : []
+                  }
+                  emptyMessage="No results."
                   placeholder="Departure airport"
+                  onValueChange={setDepartureAirport}
                   value={departureAirport}
-                  onChange={(e) => setDepartureAirport(e.target.value)}
-                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  onChange={(searchInput) => {
+                    setSearchQuery(searchInput)
+                  }}
+                  isLoading={searchLoading}
+                  icon={
+                    <Icon
+                      icon="material-symbols:flight-takeoff"
+                      className="text-gray-400"
+                      height={20}
+                      width={20}
+                    />
+                  }
+                  searchTooltipText="Search by airport name, not by city"
                 />
               </div>
 
               {/* Arrival Airport - NO border-r */}
               <div className="flex flex-1 items-center px-4 py-4">
-                <Icon
-                  icon="material-symbols:flight-land"
-                  className="mr-3 text-gray-400"
-                  height={20}
-                  width={20}
-                />
-                <Input
-                  type="text"
+                <AutoComplete
+                  options={
+                    searchResults?.length > 0
+                      ? searchResults?.map((result) => ({
+                          label: `${result?.airport_name} (${result?.iata_code})`,
+                          value: result.iata_code,
+                          searchText: result.airport_name
+                        }))
+                      : []
+                  }
+                  emptyMessage="No results."
                   placeholder="Final destination airport"
+                  onValueChange={setArrivalAirport}
                   value={arrivalAirport}
-                  onChange={(e) => setArrivalAirport(e.target.value)}
-                  className="border-none bg-transparent p-0 text-sm font-medium text-gray-600 placeholder:text-gray-400 focus:ring-0 focus:ring-offset-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                  onChange={(searchInput) => {
+                    setSearchQuery(searchInput)
+                  }}
+                  isLoading={searchLoading}
+                  icon={
+                    <Icon
+                      icon="material-symbols:flight-land"
+                      className="text-gray-400"
+                      height={20}
+                      width={20}
+                    />
+                  }
+                  searchTooltipText="Search by airport name, not by city"
                 />
               </div>
 

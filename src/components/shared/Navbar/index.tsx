@@ -40,13 +40,6 @@ export default function Navbar() {
           >
             <Link href="tel:03300435407">
               Check Eligibility
-              <Icon
-                icon="ic:round-arrow-forward"
-                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                height={20}
-                width={20}
-                color="white"
-              />
             </Link>
           </Button>
 
