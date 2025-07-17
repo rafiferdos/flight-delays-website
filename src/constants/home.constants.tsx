@@ -109,7 +109,7 @@ export const CompensationRules = [
     <strong>You could claim up to £520 per passenger</strong> if your flight
     arrived <strong>3+ hours late</strong>, provided the delay was{" "}
     <strong>the airline&apos;s fault</strong> (not due to extraordinary
-    circumstances like weather or strikes)
+    circumstances like weather)
   </>,
   <>
     <strong>
