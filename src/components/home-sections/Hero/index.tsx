@@ -6,9 +6,21 @@ import CheckCompensationForm from "./_components/HeroCompensationForm"
 
 //* Constant Data
 const Facilities = [
-  "Free compensation check",
-  "Fast & Risk-Free",
-  "Highest Success Rate"
+  {
+    text: "Free compensation check",
+    icon: "mdi:currency-gbp",
+    iconColor: "#10b981" // green
+  },
+  {
+    text: "Fast & Risk-Free",
+    icon: "mdi:timer-outline",
+    iconColor: "#f59e0b" // amber
+  },
+  {
+    text: "Highest Success Rate",
+    icon: "mdi:shield-check",
+    iconColor: "#3b82f6" // blue
+  }
 ]
 
 export default function Hero() {
@@ -94,13 +106,16 @@ export default function Hero() {
             </h2>
 
             <p className="mx-auto mb-6 max-w-xl px-2 text-sm font-medium text-white/90 sm:mb-8 sm:px-0 sm:text-base lg:text-lg">
-            Claiming compensation is easier than you think. We handle everything and you get paid.
+              Claiming compensation is easier than you think. We handle{" "}
+              <span className="font-extrabold text-[#7fdaf2]">everything</span>{" "}
+              and you get{" "}
+              <span className="font-extrabold text-[#7fdaf2]">paid</span>.
             </p>
           </div>
 
           {/* ------------------ Form Section ---------------------- */}
           <div className="w-full max-w-4xl">
-            <div className="rounded-xl backdrop-blur-3xl p-0 shadow-2xl sm:rounded-2xl lg:p-8">
+            <div className="rounded-xl p-0 shadow-2xl backdrop-blur-3xl sm:rounded-2xl lg:p-8">
               {/* check compensation gradient text */}
               {/* <h3 className="mb-6 text-center text-2xl font-bold text-[#7fdaf2] sm:mb-8 sm:text-3xl md:text-4xl">
                 Check Compensation
@@ -132,21 +147,25 @@ export default function Hero() {
           </div>
 
           {/* ------------------ Facilities ---------------------- */}
-          <div className="flex w-full max-w-4xl flex-col items-center justify-center gap-y-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-4 lg:justify-between lg:gap-x-8">
-            {Facilities.map((facility) => (
+          <div className="grid w-full max-w-4xl grid-cols-2 place-items-center gap-x-3 gap-y-4 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-4 lg:justify-between lg:gap-x-8">
+            {Facilities.map((facility, index) => (
               <div
-                key={facility}
-                className="flex items-center gap-x-2 text-white"
+                key={facility.text}
+                className={`flex items-center gap-x-2 text-white ${
+                  index === 2 ? "col-span-2 sm:col-span-1" : ""
+                }`}
               >
-                <Icon
-                  icon="lets-icons:check-fill"
-                  color="var(--secondary)"
-                  height={20}
-                  width={20}
-                  className="sm:h-6 sm:w-6"
-                />
-                <span className="text-base font-medium sm:text-lg">
-                  {facility}
+                <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm sm:h-8 sm:w-8">
+                  <Icon
+                    icon={facility.icon}
+                    color={facility.iconColor}
+                    height={14}
+                    width={14}
+                    className="sm:h-5 sm:w-5"
+                  />
+                </div>
+                <span className="text-xs leading-snug font-medium sm:text-base lg:text-lg">
+                  {facility.text}
                 </span>
               </div>
             ))}
