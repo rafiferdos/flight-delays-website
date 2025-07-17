@@ -17,8 +17,8 @@ import { Icon } from "@iconify/react/dist/iconify.js"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import { useFormContext } from "react-hook-form"
-import { toast } from "sonner"
 import { isValidPhoneNumber } from "react-phone-number-input"
+import { toast } from "sonner"
 import { z } from "zod"
 
 export const compensationFormValidationSchema = z.object({
@@ -158,8 +158,6 @@ export default function CompensationStep2() {
     }
   }, [airlineSearchParam, searchParams, setValue])
 
-
-
   return (
     <div className="grid gap-6">
       {/* Airline Selection */}
@@ -289,15 +287,12 @@ export default function CompensationStep2() {
                         )}
                       >
                         {field.value === "delay" && (
-                          <div className="h-full w-full rounded-full bg-white scale-50" />
+                          <div className="h-full w-full scale-50 rounded-full bg-white" />
                         )}
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900">
-                          Delay for 3 hours or more
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          Flight was delayed by 3+ hours
+                          My Flight was Delayed
                         </p>
                       </div>
                     </div>
@@ -322,15 +317,12 @@ export default function CompensationStep2() {
                         )}
                       >
                         {field.value === "cancelled" && (
-                          <div className="h-full w-full rounded-full bg-white scale-50" />
+                          <div className="h-full w-full scale-50 rounded-full bg-white" />
                         )}
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900">
-                          Cancelled Flight
-                        </p>
-                        <p className="text-sm text-gray-600">
-                          Flight was cancelled by the airline
+                          My Flight was Cancelled
                         </p>
                       </div>
                     </div>
@@ -348,7 +340,7 @@ export default function CompensationStep2() {
           <FormLabel className="flex-center-start mb-0.5 gap-1">
             Additional Comments
           </FormLabel>
-          <p className="text-sm text-gray-600 mb-2">
+          <p className="mb-2 text-sm text-gray-600">
             Please tell us more about your delay or cancellation (optional)
           </p>
           <FormField
@@ -361,7 +353,7 @@ export default function CompensationStep2() {
                     {...field}
                     rows={4}
                     placeholder="e.g., Flight was delayed due to technical issues, we waited at the gate for 4 hours..."
-                    className="w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                    className="w-full rounded-lg border border-gray-300 p-3 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
                   />
                 </FormControl>
                 <FormMessage />
