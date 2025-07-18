@@ -344,34 +344,54 @@ interface IFaq {
 export const FaqData: IFaq[] = [
   {
     key: "faq-1",
-    question: "How do I know if i'm eligible for compensation?",
-    answer:
-      "You may be eligible for compensation if your flight was delayed by three hours or more and the cause was within the airline's control."
+    question: "How do I know if I'm eligible for compensation?",
+    answer: (
+      <div>
+        <p>You may be eligible for compensation if:</p>
+        <ul className="mt-3 list-inside list-disc pl-4">
+          <li>
+            Your flight arrived at its final destination 3 hours or more later
+            than scheduled
+          </li>
+          <li>
+            The delay was within the airline's control (e.g. staffing issues,
+            technical problems)
+          </li>
+          <li>
+            The flight departed from the UK or EU, or was with a UK/EU airline
+            arriving into the UK/EU
+          </li>
+          <li>The delay happened within the last 6 years (in most cases)</li>
+        </ul>
+      </div>
+    )
   },
   {
     key: "faq-2",
     question: "What information do I need to provide to submit a claim?",
     answer: (
       <div>
-        <p>To submit your claim, we will need the following information</p>
+        <p>We've made it simple. To start your claim, just provide:</p>
         <ul className="mt-3 list-inside list-disc pl-4">
-          <li>Flight details</li>
-          <li>Booking reference</li>
-          <li>Full legal names of all passengers on your booking.</li>
+          <li>Your departure and arrival airports</li>
+          <li>The date of your flight</li>
+          <li>The airline you flew with</li>
+          <li>The full legal names of everyone on the booking</li>
+          <li>A brief description of the delay (if known)</li>
         </ul>
       </div>
     )
   },
   {
     key: "faq-3",
-    question: "How long does the claims process take?",
+    question: "Can I claim for past flights?",
     answer:
-      "On average we get our passengers compensation just 13 days after taking on their claim! The processing time can however vary, but usually takes no more then a few weeks depending on the airline and complexity of the case."
+      "Yes! In most cases, you can claim for flights delayed within the last 6 years. Even if you've deleted the booking email or no longer have the reference, we can often retrieve the necessary details for you."
   },
   {
     key: "faq-4",
-    question: "What are your fees?",
+    question: "How long does the claims process take?",
     answer:
-      "We work on a No Win, No Fee basis! This means we only get paid if your claim is successful. Our Fee is always a flat 35%."
+      "Some passengers receive their compensation in as little as 7 days. The exact time can vary depending on the airline and how complex the case is, but most claims are settled within a few weeks. We keep you updated every step of the way."
   }
 ]
