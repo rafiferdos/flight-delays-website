@@ -1,9 +1,9 @@
-import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet"
-import Link from "next/link"
-import { NavbarLinks } from "@/constants/navbar.constants"
-import { Dispatch, SetStateAction } from "react"
-import { Icon } from "@iconify/react"
 import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet"
+import { NavbarLinks } from "@/constants/navbar.constants"
+import { Icon } from "@iconify/react"
+import Link from "next/link"
+import { Dispatch, SetStateAction } from "react"
 
 interface MobileNavbarProps {
   open: boolean
@@ -34,9 +34,9 @@ const MobileNavbar = ({ open, setOpen }: MobileNavbarProps) => {
 
         {/* Contact Button */}
         <Button variant="primary" size="lg" className="mt-2 w-max" asChild>
-          <Link href="tel:03300435407">
-            <Icon icon="fa:phone" aria-hidden="true" />
-            0330 043 5407
+          <Link href="/compensation">
+            <Icon icon="mdi:file-document-edit" aria-hidden="true" />
+            Check Eligibility
           </Link>
         </Button>
       </SheetContent>
