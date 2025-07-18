@@ -20,40 +20,40 @@ export default function SimplifiedNavbar() {
           <div className="absolute inset-0 -m-2 animate-pulse rounded-2xl bg-gradient-to-r from-blue-100/50 via-emerald-100/50 to-blue-100/50 blur-sm"></div>
 
           {/* Main container */}
-          <div className="relative flex items-center gap-2 rounded-xl border border-blue-200/50 bg-gradient-to-r from-blue-50 to-emerald-50 px-4 py-2 shadow-sm">
+          <div className="relative flex items-center gap-1 rounded-xl border border-blue-200/50 bg-gradient-to-r from-blue-50 to-emerald-50 px-2 py-1 shadow-sm sm:gap-2 sm:px-4 sm:py-2">
             {/* Left currency icon */}
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 shadow-md">
+            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 shadow-md sm:h-8 sm:w-8">
               <Icon
                 icon="mdi:currency-gbp"
                 className="text-white"
-                height={18}
-                width={18}
+                height={14}
+                width={14}
               />
             </div>
 
             {/* Main text */}
             <div className="flex flex-col items-center">
-              <span className="bg-gradient-to-r from-blue-600 via-emerald-600 to-blue-600 bg-clip-text text-sm leading-tight font-bold text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-emerald-600 to-blue-600 bg-clip-text text-xs leading-tight font-bold text-transparent sm:text-sm">
                 Claim Up To
               </span>
-              <span className="-mt-0.5 bg-gradient-to-r from-emerald-600 via-blue-600 to-emerald-600 bg-clip-text text-lg leading-tight font-extrabold text-transparent">
+              <span className="-mt-0.5 bg-gradient-to-r from-emerald-600 via-blue-600 to-emerald-600 bg-clip-text text-sm leading-tight font-extrabold text-transparent sm:text-lg">
                 £520 Per Passenger
               </span>
             </div>
 
             {/* Right sparkle icon */}
-            <div className="flex h-8 w-8 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 shadow-md">
+            <div className="flex h-6 w-6 animate-pulse items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 shadow-md sm:h-8 sm:w-8">
               <Icon
                 icon="mdi:star-four-points"
                 className="text-white"
-                height={16}
-                width={16}
+                height={12}
+                width={12}
               />
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-1 -right-1 h-3 w-3 animate-ping rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 opacity-75"></div>
-            <div className="absolute -bottom-1 -left-1 h-2 w-2 animate-pulse rounded-full bg-gradient-to-br from-blue-400 to-emerald-500"></div>
+            <div className="absolute -top-1 -right-1 h-2 w-2 animate-ping rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 opacity-75 sm:h-3 sm:w-3"></div>
+            <div className="absolute -bottom-1 -left-1 h-1.5 w-1.5 animate-pulse rounded-full bg-gradient-to-br from-blue-400 to-emerald-500 sm:h-2 sm:w-2"></div>
           </div>
         </div>
       </ResponsiveContainer>
