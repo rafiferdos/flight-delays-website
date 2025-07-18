@@ -7,22 +7,15 @@ export default function CompensationLayout({ children }: PropsWithChildren) {
       <div className="w-11/12 space-y-8 lg:w-1/2 xl:w-1/3">
         <Suspense fallback={<FormSuspenseLoader />}>{children}</Suspense>
 
-        {/* Martin Lewis Recommendation - Creative Speech Bubble */}
+        {/* Martin Lewis Recommendation - Blue Theme Speech Bubble */}
         <div className="relative">
-          {/* Background glow effect */}
-          <div className="absolute inset-0 -m-3 animate-pulse rounded-2xl bg-gradient-to-r from-green-100/50 via-blue-100/50 to-green-100/50 blur-sm"></div>
-
           {/* Speech bubble container */}
-          <div className="relative rounded-2xl border border-green-200/50 bg-gradient-to-r from-green-50 to-blue-50 p-6 shadow-lg">
-            {/* Decorative elements */}
-            <div className="absolute -top-2 -right-2 h-4 w-4 animate-ping rounded-full bg-gradient-to-br from-green-400 to-blue-500 opacity-75"></div>
-            <div className="absolute -bottom-2 -left-2 h-3 w-3 animate-pulse rounded-full bg-gradient-to-br from-blue-400 to-green-500"></div>
-
+          <div className="relative rounded-2xl border border-blue-200/50 bg-gradient-to-r from-blue-50 to-blue-100 p-6 shadow-lg">
             {/* Content */}
             <div className="flex items-center gap-4">
               {/* Profile icon */}
               <div className="flex-shrink-0">
-                <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-blue-600 shadow-md">
+                <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -36,7 +29,7 @@ export default function CompensationLayout({ children }: PropsWithChildren) {
                     />
                   </svg>
                   {/* Badge indicator */}
-                  <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-500">
+                  <div className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -56,7 +49,7 @@ export default function CompensationLayout({ children }: PropsWithChildren) {
               {/* Text content */}
               <div className="flex-1">
                 <div className="mb-1 flex items-center gap-2">
-                  <p className="bg-gradient-to-r from-green-700 via-blue-700 to-green-700 bg-clip-text text-lg font-bold text-transparent">
+                  <p className="text-lg font-bold text-blue-900">
                     "Recommended by Martin Lewis"
                   </p>
                   <div className="flex gap-1">
@@ -72,7 +65,7 @@ export default function CompensationLayout({ children }: PropsWithChildren) {
                     ))}
                   </div>
                 </div>
-                <p className="text-sm font-medium text-green-800">
+                <p className="text-sm font-medium text-blue-800">
                   Money Saving Expert
                 </p>
                 <p className="mt-1 text-xs text-blue-700">
@@ -83,7 +76,7 @@ export default function CompensationLayout({ children }: PropsWithChildren) {
 
             {/* Speech bubble tail */}
             <div className="absolute bottom-0 left-8 translate-y-full transform">
-              <div className="h-0 w-0 border-t-[15px] border-r-[15px] border-l-[15px] border-t-green-50 border-r-transparent border-l-transparent"></div>
+              <div className="h-0 w-0 border-t-[15px] border-r-[15px] border-l-[15px] border-t-blue-50 border-r-transparent border-l-transparent"></div>
             </div>
           </div>
         </div>
