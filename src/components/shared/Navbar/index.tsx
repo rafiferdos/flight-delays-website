@@ -38,9 +38,7 @@ export default function Navbar() {
             className="group hidden transition-all duration-300 hover:-translate-y-[1px] hover:shadow-lg md:inline-flex"
             asChild
           >
-            <Link href="tel:03300435407">
-              Check Eligibility
-            </Link>
+            <Link href="/compensation">Check Eligibility</Link>
           </Button>
 
           {/* Mobile Menu Trigger */}
