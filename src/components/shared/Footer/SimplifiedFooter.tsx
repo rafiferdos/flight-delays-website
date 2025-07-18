@@ -58,6 +58,16 @@ export default function SimplifiedFooter() {
       {/* Divider */}
       <div className="mt-10 mb-4 border-t border-gray-700 sm:mt-16"></div>
 
+      {/* Privacy Policy Link */}
+      <div className="mb-4 text-center">
+        <Link
+          href="/privacy-policy"
+          className="text-sm font-light transition-colors hover:text-gray-300 sm:text-base"
+        >
+          Privacy Policy
+        </Link>
+      </div>
+
       {/* Copyright */}
       <div className="text-muted-foreground px-4 text-center text-xs sm:text-sm">
         Copyright &copy; 2025 FLIGHT-DELAYS. All Rights Reserved
