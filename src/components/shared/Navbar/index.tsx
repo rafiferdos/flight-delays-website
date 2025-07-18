@@ -31,14 +31,18 @@ export default function Navbar() {
           })}
         </div>
 
-        <div>
+        {/* Right side - Check Eligibility Button and Mobile Menu */}
+        <div className="flex items-center gap-3">
           <Button
             variant="primary"
             size="lg"
-            className="group hidden transition-all duration-300 hover:-translate-y-[1px] hover:shadow-lg md:inline-flex"
+            className="group transition-all duration-300 hover:-translate-y-[1px] hover:shadow-lg"
             asChild
           >
-            <Link href="/compensation">Check Eligibility</Link>
+            <Link href="/compensation">
+              <span className="hidden sm:inline">Check Eligibility</span>
+              <span className="sm:hidden">Check Eligibility</span>
+            </Link>
           </Button>
 
           {/* Mobile Menu Trigger */}

@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet"
 import { NavbarLinks } from "@/constants/navbar.constants"
 import { Icon } from "@iconify/react"
@@ -31,14 +30,6 @@ const MobileNavbar = ({ open, setOpen }: MobileNavbarProps) => {
             />
           </Link>
         ))}
-
-        {/* Contact Button */}
-        <Button variant="primary" size="lg" className="mt-2 w-max" asChild>
-          <Link href="/compensation">
-            <Icon icon="mdi:file-document-edit" aria-hidden="true" />
-            Check Eligibility
-          </Link>
-        </Button>
       </SheetContent>
     </Sheet>
   )
