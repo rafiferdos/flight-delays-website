@@ -1,7 +1,5 @@
 "use client"
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { useFormContext } from "react-hook-form"
 import {
   FormControl,
   FormField,
@@ -9,6 +7,8 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { useFormContext } from "react-hook-form"
 import RequiredSign from "./RequiredSign"
 
 interface URadioGroupProps {
@@ -39,7 +39,7 @@ export default function URadioGroup({
           <FormControl>
             <RadioGroup
               onValueChange={field.onChange}
-              defaultValue={field.value}
+              value={field.value}
               className="flex space-x-1"
             >
               {options?.map((item) => (

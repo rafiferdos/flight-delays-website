@@ -39,8 +39,12 @@ export default function CompensationForm({
     resolver: zodResolver(compensationFormValidationSchema),
     defaultValues: {
       acceptTerms: false,
-      departureAirport: searchParams?.departureAirport as string | undefined,
-      arrivalAirport: searchParams?.arrivalAirport as string | undefined,
+      departureAirport: (searchParams?.departureAirport as string) || "",
+      arrivalAirport: (searchParams?.arrivalAirport as string) || "",
+      airline: "", // Add missing field
+      flightNumber: "", // Add missing field
+      departureDate: undefined, // Add missing field - dates can be undefined initially
+      dateOfBirth: undefined, // Add missing field - dates can be undefined initially
       claimType: "",
       additionalComments: "",
       leadPassengerFullName: "",
@@ -335,10 +339,11 @@ export default function CompensationForm({
       >
         <div className="mb-4 border-b px-4 pb-2 md:px-6">
           <h4 className="text-h4 text-gradient font-semibold">
-          Had A Flight Delayed For More Than 3 hours?
+            Had A Flight Delayed For More Than 3 hours?
           </h4>
           <p className="text-gray-600">
-          You may be eligible to claim up to £520 per passenger in compensation!
+            You may be eligible to claim up to £520 per passenger in
+            compensation!
           </p>
         </div>
 

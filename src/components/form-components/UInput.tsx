@@ -1,4 +1,3 @@
-import { useFormContext } from "react-hook-form"
 import {
   FormControl,
   FormDescription,
@@ -8,11 +7,12 @@ import {
   FormMessage
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import EyeIconInverse from "../others/EyeIconInverse"
 import { cn } from "@/lib/utils"
-import React from "react"
 import { InputMask, Replacement } from "@react-input/mask"
 import { cva } from "class-variance-authority"
+import React from "react"
+import { useFormContext } from "react-hook-form"
+import EyeIconInverse from "../others/EyeIconInverse"
 import RequiredSign from "./RequiredSign"
 
 export const inputVariants = cva(
@@ -133,7 +133,6 @@ const UInput = ({
                   accept={accept}
                   onChange={field.onChange}
                   maxLength={max}
-                  defaultValue={value}
                   readOnly={readOnly}
                   autoComplete={autoComplete}
                 />
