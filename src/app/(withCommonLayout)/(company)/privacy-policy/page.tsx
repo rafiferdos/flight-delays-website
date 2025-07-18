@@ -6,319 +6,237 @@ export default function PrivacyPolicy() {
     <main className="mx-auto max-w-4xl px-6 py-12 text-black">
       <h1 className="mb-4 text-3xl font-extrabold">Privacy Policy</h1>
 
-      <em className="mb-6 block">Last updated: 06/2025</em>
-
-      <p className="mb-6">
-        At Flight Delay Claims Ltd (15981515), we are committed to protecting
-        and respecting your privacy. This Privacy Policy explains how we
-        collect, use, disclose, and safeguard your personal data when you visit
-        our website or use our services. We aim to comply with the UK General
-        Data Protection Regulation (UK GDPR), the Data Protection Act 2018, and
-        the guidance of the Information Commissioner’s Office (ICO).
-      </p>
-
-      <p className="mb-6">
-        Please read this policy carefully to understand our practices regarding
-        your personal data.
-      </p>
+      <em className="mb-6 block">Effective Date: 17 July 2025</em>
 
       <Section title="1. Who We Are">
         <p>
-          <strong>Flight Delay Claims Ltd (15981515)</strong> is a company
-          dedicated to helping passengers claim compensation for flight delays
-          under UK and EU law. For the purposes of data protection legislation,
-          we act as the <strong>data controller</strong> for your personal data.
+          We are Flight Delay Claims Ltd, a UK-based lead generation company. We
+          collect your personal data through our website and securely share it
+          with regulated legal service providers who may contact you to progress
+          your potential flight compensation claim.
         </p>
         <p className="mt-4">
-          <strong>Contact Details:</strong>
+          We act as the data controller for the personal data we collect and
+          only process that data for the purposes described in this Privacy
+          Policy.
         </p>
-        <ul className="list-disc pl-6">
-          <li>
-            <strong>Registered Address:</strong> 2 Charlesworth Court, Knights
-            Way, Battlefield Enterprise Park, Shrewsbury, Shropshire, SYI 3AB
-          </li>
-          <li>
-            <strong>Email:</strong> info@flight-delay-claims.com
-          </li>
-        </ul>
       </Section>
 
-      <Section title="2. What Information We Collect">
+      <Section title="2. What Personal Data We Collect">
         <p>
-          We collect and process personal data necessary to provide our flight
-          delay compensation services. This includes:
+          We may collect and process the following categories of data when you
+          use our website:
         </p>
-        <h3 className="mt-4 font-semibold">Personal Information</h3>
-        <ul className="mt-2 list-disc pl-6">
-          <li>
-            <strong>Identity Details:</strong> Name, email address, postal
-            address, and phone number.
-          </li>
-          <li>
-            <strong>Flight Information:</strong> Airline, flight number, booking
-            reference, flight date, and details of the delay.
-          </li>
-          <li>
-            <strong>Payment Details:</strong> Bank details for processing
-            compensation payments (collected only when necessary).
-          </li>
-          <li>
-            <strong>Additional Information:</strong> Any other information you
-            voluntarily provide through our online forms, email, or telephone
-            communications.
-          </li>
-        </ul>
-        <h3 className="mt-4 font-semibold">Technical and Usage Information</h3>
-        <ul className="mt-2 list-disc pl-6">
-          <li>
-            <strong>Automatically Collected Data:</strong> Your IP address,
-            browser type, device information, time zone settings, and website
-            usage details (e.g. page visits, referral sources).
-          </li>
-          <li>
-            <strong>Cookies and Similar Technologies:</strong> We may use
-            cookies to enhance your experience and to collect anonymous
-            analytics data.
-          </li>
-        </ul>
-      </Section>
 
-      <Section title="3. How We Collect Your Data">
-        <p>We collect your personal data through:</p>
+        <h3 className="mt-4 font-semibold">Personal & Contact Information:</h3>
         <ul className="mt-2 list-disc pl-6">
-          <li>
-            <strong>Direct Interactions:</strong> When you fill in our claim
-            form, contact us via email, telephone, or other means.
-          </li>
+          <li>Full name</li>
+          <li>Email address</li>
+          <li>Telephone number</li>
+          <li>Date of birth</li>
+          <li>Postal address (if provided)</li>
         </ul>
-      </Section>
 
-      <Section title="4. How We Use Your Data">
-        <p>We use the information we collect for the following purposes:</p>
+        <h3 className="mt-4 font-semibold">Flight Details:</h3>
         <ul className="mt-2 list-disc pl-6">
-          <li>
-            <strong>Claim Processing:</strong> To assess and process your flight
-            delay compensation claim.
-          </li>
-          <li>
-            <strong>Communication:</strong> To contact you regarding your claim,
-            provide updates, and respond to your inquiries.
-          </li>
-          <li>
-            <strong>Legal and Regulatory Compliance:</strong> To comply with our
-            legal obligations and to safeguard our rights.
-          </li>
-          <li>
-            <strong>Service Improvement:</strong> For internal business
-            operations, including data analysis, research, and enhancing our
-            services.
-          </li>
+          <li>Airline</li>
+          <li>Flight number</li>
+          <li>Departure and arrival airports</li>
+          <li>Scheduled and actual flight times</li>
+          <li>Booking reference</li>
+          <li>Date of travel</li>
+          <li>Nature and duration of delay</li>
         </ul>
-        <p className="mt-2">
-          We will never sell your personal data to third parties.
+
+        <h3 className="mt-4 font-semibold">
+          Additional Passenger Information (optional):
+        </h3>
+        <ul className="mt-2 list-disc pl-6">
+          <li>Names and dates of birth of other passengers</li>
+        </ul>
+
+        <h3 className="mt-4 font-semibold">Technical & Consent Information:</h3>
+        <ul className="mt-2 list-disc pl-6">
+          <li>IP address</li>
+          <li>Browser/device type</li>
+          <li>Submission time/date</li>
+          <li>Consent to terms and privacy policy</li>
+        </ul>
+
+        <p className="mt-4">
+          We do not collect special category (sensitive) data such as health,
+          ethnicity, or religious beliefs.
         </p>
       </Section>
 
-      <Section title="5. Lawful Basis for Processing">
+      <Section title="3. How We Use Your Personal Data">
+        <p>We use your personal data for the following purposes:</p>
+        <ul className="mt-2 list-disc pl-6">
+          <li>To assess your eligibility for flight delay compensation</li>
+          <li>
+            To pass your details to a regulated legal firm to progress your
+            claim
+          </li>
+          <li>
+            To contact you regarding your enquiry or to request further
+            information
+          </li>
+          <li>To analyse and improve our website and user experience</li>
+          <li>To comply with legal and regulatory obligations</li>
+        </ul>
+        <p className="mt-4">
+          We do not use your data for automated decision-making or profiling.
+        </p>
+      </Section>
+
+      <Section title="4. Legal Basis for Processing">
+        <p>Our legal basis for processing your data may include:</p>
+        <ul className="mt-2 list-disc pl-6">
+          <li>
+            <strong>Consent</strong> – You provide explicit consent when
+            submitting your details.
+          </li>
+          <li>
+            <strong>Legitimate Interests</strong> – It is in your interest and
+            ours to connect you with a solicitor who can assist with your claim.
+          </li>
+          <li>
+            <strong>Contract</strong> – Processing your enquiry is a step toward
+            forming a legal services contract.
+          </li>
+          <li>
+            <strong>Legal Obligation</strong> – We may need to retain or process
+            data for legal or regulatory compliance.
+          </li>
+        </ul>
+      </Section>
+
+      <Section title="5. Who We Share Your Data With">
+        <p>We may share your personal data with:</p>
+        <ul className="mt-2 list-disc pl-6">
+          <li>
+            Specialist legal service providers for the purpose of pursuing your
+            claim
+          </li>
+          <li>
+            Trusted IT service providers who support our systems and website
+          </li>
+          <li>Regulatory or public authorities when required by law</li>
+        </ul>
+        <p className="mt-4">
+          We do not sell, rent, or share your data with third parties for
+          marketing purposes.
+        </p>
+      </Section>
+
+      <Section title="6. International Transfers">
         <p>
-          We process your personal data on one or more of the following legal
-          bases:
+          Some service providers may process or store your data outside the UK.
+          Where applicable, we ensure appropriate safeguards are in place, such
+          as:
         </p>
         <ul className="mt-2 list-disc pl-6">
-          <li>
-            <strong>Contractual Necessity:</strong> To fulfil our obligations in
-            processing your claim.
-          </li>
-          <li>
-            <strong>Legal Obligation:</strong> To comply with applicable laws
-            and regulatory requirements.
-          </li>
-          <li>
-            <strong>Legitimate Interests:</strong> For the purposes of improving
-            our services, fraud prevention, and service administration.
-          </li>
-          <li>
-            <strong>Consent:</strong> Where you have provided explicit consent.
-          </li>
+          <li>UK adequacy decisions</li>
+          <li>Standard Contractual Clauses (SCCs)</li>
+          <li>Other legal safeguards under UK GDPR</li>
         </ul>
       </Section>
 
-      <Section title="6. How We Share Your Data">
-        <p>Your personal data may be shared with:</p>
+      <Section title="7. Data Retention">
+        <p>We retain personal data only as long as necessary:</p>
         <ul className="mt-2 list-disc pl-6">
-          <li>
-            <strong>Airlines and Relevant Authorities:</strong> To pursue your
-            flight delay claim on your behalf.
-          </li>
-          <li>
-            <strong>Service Providers:</strong> Such as IT support, legal
-            advisors, and payment processors who assist us in delivering our
-            services.
-          </li>
-          <li>
-            <strong>Regulatory and Law Enforcement Bodies:</strong> When
-            required by law or to protect our rights and the safety of our
-            users.
-          </li>
-          <li>
-            <strong>Third-Party Partners:</strong> In the context of marketing
-            communications or analytics, but only with your consent or under
-            strict data protection agreements.
-          </li>
+          <li>Enquiry/lead data: up to 3 months</li>
+          <li>Email communications: up to 12 months</li>
+          <li>Website analytics (non-identifiable): up to 26 months</li>
         </ul>
-        <p className="mt-2">
-          Any third parties with whom we share your data are contractually
-          obligated to protect it in accordance with UK data protection laws.
+        <p className="mt-4">
+          We securely delete or anonymise data once retention periods expire.
         </p>
       </Section>
 
-      <Section title="7. International Data Transfers">
-        <p>
-          We may transfer your personal data outside the UK or European Economic
-          Area (EEA) when necessary. In such cases, we ensure that appropriate
-          safeguards are in place (e.g., standard contractual clauses) to
-          protect your data in accordance with applicable data protection
-          legislation.
-        </p>
-      </Section>
-
-      <Section title="8. Data Retention">
-        <p>We retain your personal data only for as long as necessary to:</p>
+      <Section title="8. Your Data Protection Rights">
+        <p>You have the following rights under UK data protection law:</p>
         <ul className="mt-2 list-disc pl-6">
-          <li>Process your flight delay claim and provide our services.</li>
-          <li>Comply with our legal, accounting, or reporting obligations.</li>
+          <li>Access your personal data</li>
+          <li>Rectify inaccurate or incomplete data</li>
+          <li>Erase your data ("right to be forgotten")</li>
+          <li>Restrict or object to processing</li>
+          <li>Data portability (where applicable)</li>
+          <li>Withdraw your consent at any time</li>
         </ul>
-        <h3 className="mt-4 font-semibold">Claim Data:</h3>
-        <p>
-          Typically retained for 3 months after the conclusion of your claim.
-        </p>
-        <h3 className="mt-4 font-semibold">Financial Data:</h3>
-        <p>Retained for the period required by tax and legal obligations.</p>
-        <p className="mt-2">
-          Once your data is no longer required, it will be securely deleted or
-          anonymized.
-        </p>
-      </Section>
-
-      <Section title="9. Your Data Protection Rights">
-        <p>
-          Under UK GDPR, you have the following rights regarding your personal
-          data:
-        </p>
-        <ul className="mt-2 list-disc pl-6">
-          <li>
-            <strong>Right of Access:</strong> Request a copy of the personal
-            data we hold about you.
-          </li>
-          <li>
-            <strong>Right to Rectification:</strong> Ask us to correct any
-            inaccurate or incomplete data.
-          </li>
-          <li>
-            <strong>Right to Erasure:</strong> Request deletion of your personal
-            data under certain circumstances.
-          </li>
-          <li>
-            <strong>Right to Restrict Processing:</strong> Ask us to limit the
-            processing of your data.
-          </li>
-          <li>
-            <strong>Right to Data Portability:</strong> Request your personal
-            data in a structured, commonly used, and machine-readable format.
-          </li>
-          <li>
-            <strong>Right to Object:</strong> Object to our processing of your
-            personal data, particularly for direct marketing purposes.
-          </li>
-          <li>
-            <strong>
-              Rights related to Automated Decision Making and Profiling:
-            </strong>{" "}
-            Request human intervention if decisions affecting you are made
-            solely on automated processes.
-          </li>
-        </ul>
-        <p className="mt-2">
-          To exercise any of these rights, please contact us using the details
-          provided in Section 13. You also have the right to lodge a complaint
-          with the ICO if you believe our processing of your data violates your
-          rights.
-        </p>
-      </Section>
-
-      <Section title="10. How We Protect Your Data">
-        <p>
-          We are committed to ensuring your personal data is secure. We have
-          implemented appropriate technical and organizational measures to
-          protect your data against unauthorized access, accidental loss, or
-          destruction. These measures include:
-        </p>
-        <ul className="mt-2 list-disc pl-6">
-          <li>Data encryption on secure servers.</li>
-          <li>Protection by access controls and firewalls.</li>
-          <li>
-            Strict access controls ensuring that only authorized personnel have
-            access to your data.
-          </li>
-        </ul>
-      </Section>
-
-      <Section title="11. Cookies">
-        <p>We use cookies and similar technologies on our website to:</p>
-        <ul className="mt-2 list-disc pl-6">
-          <li>Enhance your browsing experience.</li>
-          <li>
-            Collect anonymous analytical data to help us improve our site.
-          </li>
-          <li>Personalize content and offer social media features.</li>
-        </ul>
-        <p className="mt-2">
-          You can control or delete cookies via your web browser settings.
-        </p>
-      </Section>
-
-      <Section title="12. Changes to This Privacy Policy">
-        <p>
-          We may update this Privacy Policy from time to time. Any changes will
-          be posted on this page along with an updated “Last Updated” date. We
-          encourage you to review this policy periodically to stay informed
-          about how we are protecting your personal data.
-        </p>
-      </Section>
-
-      <Section title="13. Contact Us">
-        <p>
-          If you have any questions, comments, or concerns about this Privacy
-          Policy or our data processing practices, or if you wish to exercise
-          your data protection rights, please contact us at:
-        </p>
-        <ul className="mt-2 list-none space-y-1 pl-6">
-          <li>
-            <strong>Email:</strong> info@flight-delay-claims.com
-          </li>
-          <li>
-            <strong>Postal Address:</strong> 2 Charlesworth Court, Knights Way,
-            Battlefield Enterprise Park, Shrewsbury, Shropshire, SYI 3AB
-          </li>
-        </ul>
-        <p className="mt-2">
-          If you are unsatisfied with our response, you also have the right to
-          lodge a complaint with the Information Commissioner’s Office (ICO) by
-          visiting
+        <p className="mt-4">
+          To exercise your rights, contact:
           <br />
+          📧 info@flight-delay-claims.com
+        </p>
+        <p className="mt-4">
+          You also have the right to lodge a complaint with the UK Information
+          Commissioner's Office (ICO):
+          <br />
+          🌐{" "}
           <a
-            href="https://www.ico.org.uk"
+            href="https://ico.org.uk/make-a-complaint"
             className="text-blue-600 underline"
             target="_blank"
           >
-            www.ico.org.uk
+            https://ico.org.uk/make-a-complaint
           </a>
         </p>
-        <p className="mt-2">
-          By using our website and services, you acknowledge that you have read
-          and understood this Privacy Policy and agree to the collection and use
-          of your personal data as described herein.
+      </Section>
+
+      <Section title="9. Data Security">
+        <p>We apply industry-standard security measures, including:</p>
+        <ul className="mt-2 list-disc pl-6">
+          <li>SSL (Secure Socket Layer) encryption</li>
+          <li>Access controls for internal systems</li>
+          <li>Regular system updates and audits</li>
+          <li>Data minimisation and limited retention practices</li>
+        </ul>
+      </Section>
+
+      <Section title="10. Cookies and Analytics">
+        <p>
+          We use cookies and analytics (e.g., Google Analytics) to improve
+          website performance. These tools do not collect identifiable personal
+          information.
         </p>
+        <p className="mt-4">
+          You can manage cookies via your browser settings.
+        </p>
+        <p className="mt-4">
+          To opt out of Google Analytics tracking:
+          <br />
+          <a
+            href="https://tools.google.com/dlpage/gaoptout"
+            className="text-blue-600 underline"
+            target="_blank"
+          >
+            https://tools.google.com/dlpage/gaoptout
+          </a>
+        </p>
+      </Section>
+
+      <Section title="11. Changes to This Policy">
+        <p>
+          We may update this Privacy Policy from time to time. Any significant
+          changes will be posted on our website with an updated effective date.
+        </p>
+      </Section>
+
+      <Section title="12. Contact Us">
+        <p>For privacy-related queries, contact:</p>
+        <div className="mt-4">
+          <p>
+            <strong>Flight Delay Claims Ltd</strong>
+          </p>
+          <p>
+            📧 <strong>Email:</strong> info@flight-delay-claims.com
+          </p>
+          <p>
+            🏠 <strong>Address:</strong> 6 Worrow Drive, Bicton Heath,
+            Shrewsbury, Shropshire, SY3 5DJ
+          </p>
+        </div>
       </Section>
     </main>
   )
