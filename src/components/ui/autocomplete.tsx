@@ -203,10 +203,12 @@ export const AutoComplete = ({
 
         {!isLoading ? (
           <CommandPrimitive.Empty className="rounded-sm px-4 py-5 text-center text-sm select-none">
-            {!inputValue ? (
-              <p className="flex items-center justify-center font-medium text-gray-600">
-                <Info className="mr-2 h-5 w-5 text-blue-500" />
-                {searchTooltipText}
+            {!inputValue || inputValue?.length < 2 ? (
+              <p className="flex items-center justify-center rounded-lg border border-blue-200 bg-blue-50 p-3 font-medium text-gray-700">
+                <Info className="mr-2 h-5 w-5 animate-pulse text-blue-600" />
+                <span className="font-semibold text-blue-800">
+                  {searchTooltipText}
+                </span>
               </p>
             ) : inputValue && inputValue?.length < 3 ? (
               <p className="flex items-center justify-center font-medium text-gray-600">
