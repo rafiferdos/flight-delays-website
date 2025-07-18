@@ -65,15 +65,15 @@ export const StatsData: IStat[] = [
     )
   },
   {
-    key: "ensurity",
-    stat: "100",
-    valueText: "%",
-    label: "airline coverage",
+    key: "claimForm",
+    stat: "2",
+    valueText: "minute",
+    label: "Claim in as little as 2 Minutes",
     icon: (
       <div className="relative">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#017292]/10 to-[#017292]/5 opacity-20"></div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[rgb(2,171,217)]/10 to-[rgb(2,171,217)]/5 opacity-20"></div>
         <Icon
-          icon="mdi:airplane"
+          icon="mdi:file-document-edit"
           className="size-12 sm:size-14 md:size-16 lg:size-18"
           color="rgb(2, 171, 217)"
         />
@@ -81,10 +81,7 @@ export const StatsData: IStat[] = [
           className="absolute -top-1 -right-1 rounded-full p-1"
           style={{ backgroundColor: "rgb(2, 171, 217)" }}
         >
-          <Icon
-            icon="mdi:check-circle"
-            className="size-3 text-white sm:size-4"
-          />
+          <Icon icon="mdi:clock-fast" className="size-3 text-white sm:size-4" />
         </div>
       </div>
     )
