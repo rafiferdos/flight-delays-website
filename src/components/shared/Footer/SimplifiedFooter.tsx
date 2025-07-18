@@ -1,6 +1,6 @@
 import logo from "@/assets/logos/logo-mobile.svg"
 import ResponsiveContainer from "@/components/containers/ResponsiveContainer"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -40,13 +40,6 @@ export default function SimplifiedFooter() {
                   2 Charlesworth Court, Knights Way, Battlefield Enterprise
                   Park, Shrewsbury, Shropshire, SYI 3AB
                 </span>
-              </li>
-              <li className="flex items-center justify-center gap-2 font-light sm:gap-3 md:justify-start">
-                <Phone
-                  size={16}
-                  className="flex-shrink-0 sm:h-[18px] sm:w-[18px]"
-                />
-                <span className="text-sm sm:text-base">0330 043 5407</span>
               </li>
               <li className="flex items-center justify-center gap-2 font-light sm:gap-3 md:justify-start">
                 <Mail
